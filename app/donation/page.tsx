@@ -53,7 +53,7 @@ export default function Donasi() {
         />
       </div>
 
-      <div className="container mx-auto mb-12 px-4 max-w-6xl  ">
+      <div className="container mx-auto mb-12 px-4 max-w-5xl  ">
         <div className="mb-4">
           <h1 className="text-4xl font-extrabold text-[#0057B8] mb-6">
             Donasi

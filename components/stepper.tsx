@@ -21,11 +21,10 @@ const StepperJS: React.FC = () => (
         },
       ]}
     /> */}
-    <Divider />
     <Steps
       progressDot
       current={2}
-      direction="vertical"
+      direction="horizontal"
       items={[
         {
           title: 'Registrasi',

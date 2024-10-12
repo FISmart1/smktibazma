@@ -11,7 +11,7 @@ export default function ServicePage() {
     <div className="flex flex-col justify-center items-start">
       <Banner heading="Saran & Masukan" imgSrc='https://smktibazma.sch.id/static/media/lapangan.8feef39bc2c2eaa90525.jpg'/>
 
-      <div className="py-8 lg:py-16 flex flex-col gap-4 px-4 mx-auto max-w-6xl">
+      <div className="py-8 lg:py-16 flex flex-col gap-4 px-4 mx-auto max-w-5xl">
         <div style={{ width: '100%' }}>
           <iframe
             width="100%"

@@ -115,78 +115,92 @@ export default function Home() {
 
 
       <section className="container mx-auto px-4 max-w-6xl ">
-        <h1 className="text-4xl lg:text-6xl font-black text-blue-800 text-center uppercase mb-12">
-          Sistem, Informatika, Jaringan, & Aplikasi (SIJA)
-        </h1>
+        <BlurFade delay={0.25 * 2} inView>
+          <h1 className="text-4xl lg:text-6xl font-black text-blue-800 text-center uppercase mb-12">
+            Sistem, Informatika, Jaringan, & Aplikasi (SIJA)
+          </h1>
+        </BlurFade>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Bagian Teks */}
-          <div className="space-y-6">
-            <p className={subtitle()}>
-              SIJA adalah perpaduan inovatif antara Teknik Komputer & Jaringan (TKJ) dan Rekayasa Perangkat Lunak (RPL). Kami dilengkapi dengan teknologi terbaru dalam bidang <span className="font-bold">cloud computing</span> untuk mempersiapkan siswa menghadapi tantangan masa depan.
-            </p>
-            <div className="text-xl leading-8 text-gray-700">
-              <p className={"font-bold"}>Kompetensi Keahlian:</p>
-              <ul className="list-disc pl-6">
-                <li className="mt-2"><span className="font-bold">CLOUD COMPUTING</span> <span className="font-bold text-blue-800">(IaaS, PaaS, SaaS)</span></li>
-                <li className="mt-2"><span className="font-bold">SISTEM INTERNET OF THINGS</span> <span className="font-bold text-blue-800">(SIoT)</span></li>
-                <li className="mt-2"><span className="font-bold">SISTEM KEAMANAN JARINGAN</span> <span className="font-bold text-blue-800">(SKJ)</span></li>
-                <li className="mt-2"><span className="font-bold">PRODUK KREATIF DAN KEWIRAUSAHAAN</span> <span className="font-bold text-blue-800">(PKK)</span></li>
-              </ul>
-            </div>
-          </div>
+          <BlurFade delay={0.25 * 3} inView>
 
+            <div className="space-y-6">
+              <p className={subtitle()}>
+                SIJA adalah perpaduan inovatif antara Teknik Komputer & Jaringan (TKJ) dan Rekayasa Perangkat Lunak (RPL). Kami dilengkapi dengan teknologi terbaru dalam bidang <span className="font-bold">cloud computing</span> untuk mempersiapkan siswa menghadapi tantangan masa depan.
+              </p>
+              <div className="text-xl leading-8 text-gray-700">
+                <p className={"font-bold"}>Kompetensi Keahlian:</p>
+                <ul className="list-disc pl-6">
+                  <li className="mt-2"><span className="font-bold">Cloud computing</span> <span className="font-bold text-blue-800">(IaaS, PaaS, SaaS)</span></li>
+                  <li className="mt-2"><span className="font-bold">Sistem internet of things</span> <span className="font-bold text-blue-800">(SIoT)</span></li>
+                  <li className="mt-2"><span className="font-bold">Sistem keamanan jaringan</span> <span className="font-bold text-blue-800">(SKJ)</span></li>
+                  <li className="mt-2"><span className="font-bold">Produk kreatif dan kewirausahaan</span> <span className="font-bold text-blue-800">(PKK)</span></li>
+                </ul>
+              </div>
+            </div>
+          </BlurFade>
           {/* Bagian Gambar */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:justify-end">
-            {/* Card Gambar 1 */}
-            <div className="relative group w-64 h-80 bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-              <img
-                src="/img/Mufiz.jpg"
-                alt="Student Working on Computer"
-                className="w-full h-full object-cover transition-transform transform group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
-              <div className="absolute bottom-4 left-4 text-white text-lg font-semibold">Web Programming</div>
+          <BlurFade delay={0.25 * 3} inView>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:justify-end">
+              {/* Card Gambar 1 */}
+              <div className="relative group w-64 h-80 bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+                <img
+                  src="/img/Mufiz.jpg"
+                  alt="Student Working on Computer"
+                  className="w-full h-full object-cover transition-transform transform group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
+                <div className="absolute bottom-4 left-4 text-white text-lg font-semibold">Web Programming</div>
+              </div>
+
+              {/* Card Gambar 2 */}
+              <div className="relative group w-64 h-80 bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+                <img
+                  src="/img/rakit.JPG"
+                  alt="Students Building Hardware"
+                  className="w-full h-full object-cover transition-transform transform group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
+                <div className="absolute bottom-4 left-4 text-white text-lg font-semibold">Komputer & Jaringan</div>
+              </div>
             </div>
-
-            {/* Card Gambar 2 */}
-            <div className="relative group w-64 h-80 bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-              <img
-                src="/img/rakit.JPG"
-                alt="Students Building Hardware"
-                className="w-full h-full object-cover transition-transform transform group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
-              <div className="absolute bottom-4 left-4 text-white text-lg font-semibold">Komputer & Jaringan</div>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="text-center mt-12">
-          <button className="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-200">
-            Pelajari Lebih Lanjut
-          </button>
+          </BlurFade>
         </div>
       </section>
 
 
       <div className="container mx-auto max-w-6xl mb-[75px] mt-8 p-4">
-        <h1 className="text-4xl font-bold text-blue-800 mb-8 ">Mengapa Sekolah di SMK TI BAZMA?</h1>
-        <div className="grid lg:flex items-center">
-          <Ppdb />
-        </div>
+        <BlurFade delay={0.25 * 3} inView>
+          <h1 className="text-4xl font-bold text-blue-800 mb-8 ">Mengapa Sekolah di SMK TI BAZMA?</h1>
+        </BlurFade>
+        <BlurFade delay={0.25 * 3} inView>
+          <div className="grid lg:flex items-center">
+            <Ppdb />
+          </div>
+        </BlurFade>
       </div>
 
       <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
-        <h1 className="text-4xl font-bold text-blue-800 mb-4">Info PPDB</h1>
-        <StepperJS />
+        <BlurFade delay={0.25 * 2} inView>
+          <h1 className="text-4xl font-bold text-blue-800 mb-4">Info PPDB</h1>
+        </BlurFade>
+        <BlurFade delay={0.25 * 3} inView>
+          <StepperJS />
+        </BlurFade>
       </div>
 
       <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
+      <BlurFade delay={0.25 * 2} inView>
+
         <h1 className="text-4xl font-bold text-blue-800 mb-4">Project siswa</h1>
+        </BlurFade>
+        <BlurFade delay={0.25 * 3} inView>
+
         <CardProject />
-        </div>
+        </BlurFade>
+      </div>
       <Footer />
     </section>
   );

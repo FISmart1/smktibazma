@@ -81,7 +81,7 @@ export default function CardProject() {
         className="mySwiper w-full"
       >
         {list.map((item, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className="sm:p-0 p-8">
             {/* <Card isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-5">
               <CardHeader className="absolute z-10 top-1 flex-col items-start">
                 <p className="text-tiny text-white/60 uppercase font-bold">{item.Category}</p>
@@ -268,7 +268,7 @@ const CardPpdb: FC<CardPpdbProps> = ({ icons, title, desc }) => {
         </div>
       </CardHeader>
 
-      <CardBody>
+      <CardBody className="text-justify">
         {desc}
       </CardBody>
 
@@ -312,7 +312,7 @@ export function Ppdb() {
   ]
 
   return (
-    <div className="grid gap-6 md:grid-cols-3 justify-center items-stretch">
+    <div className="grid gap-6 md:grid-cols-3 justify-center items-stretch p-4">
       {ppdb.map((ppdbd, index) => (
         <CardPpdb
           key={index}

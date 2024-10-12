@@ -20,14 +20,6 @@ const skills = [
         img: "https://elnusapetrofin.co.id/wp-content/uploads/2019/12/Logo-1-300x166.jpg", 
         link: "https://elnusapetrofin.co.id/en/about-epn/", 
     },
-    {
-        img: "",
-        link: "#",
-    },
-    {
-        img: "",
-        link: "#",
-    },
 ];
 
 const firstRow = skills.slice(0, Math.ceil(skills.length));

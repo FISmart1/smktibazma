@@ -13,7 +13,7 @@ export default function TabsLogo() {
   return (
     <div className="flex flex-col lg:px-8">
       <div className="flex w-full flex-col">
-        <Tabs aria-label="Options" placement="end" color="primary">
+        <Tabs aria-label="Options" placement="top" color="primary">
           <Tab key="biru" title="Biru" >
             <Card className="max-w-2xl p-3">
               <CardBody className="flex flex-col">
