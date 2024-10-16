@@ -13,7 +13,7 @@ export default function App() {
       <div className="w-full flex flex-col">
         <div className="md:flex items-center justify-between ">
           <BlurFade delay={0.25 * 2} inView>
-            <h1 className="text-4xl text-blue-800 mb-8 font-bold">Fasilitas </h1>
+            <h1 className="text-4xl text-blue-800 mb-8 font-bold">Fasilitas</h1>
             <Tabs
               aria-label="Options"
               selectedKey={selected}

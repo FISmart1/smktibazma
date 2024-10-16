@@ -9,21 +9,42 @@ import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
 import Timeline from "@/components/stepper";
 import StepperJS from "@/components/stepper";
 import { subtitle } from "@/components/primitives";
+import ImageWithSkeleton from "@/components/image-skeleton";
 
 export default function Home() {
   const slidesData = [
     {
-      img: "img/Angkatan.JPG",
+      img: "carousel/main/guru.avif",
       heading: "Energi Masa Depan Indonesia",
-
       desc: 'Selamat datang di SMK TI BAZMA, pusat pengembangan pendidikan yang berfokus pada pengembangan keterampilan teknologi informasi yang unggul dan berdaya saing. Kami berkomitmen untuk menciptakan generasi yang siap menghadapi tantangan dunia digital melalui pendidikan berkualitas, fasilitas lengkap, dan kurikulum berbasis teknologi terkini.'
 
     },
     {
-      img: "/img/silat.JPG",
+      img: "carousel/main/tasmi.avif",
+      heading: `JAGO IT, PINTER NGAJI`,
+      desc: "SMK TI BAZMA merupakan sekolah yang berfokus dalam pengembangan bidang Teknologi IT serta diimbangi juga dengan pembelajar dalam bidang ilmu agama seperti seperti Fiqih, akhlak, Tajwid dan Tafsir serta kaderisasi iman dan khotib. Selain itu, diwajibkan juga untuk para peserta didik menghafal Al Qur'an dan menyetorkan kepada mudabir yakni juz 28, 29 dan 30 secara mutqin."
+    },
+    {
+      img: "carousel/main/silat.avif",
       heading: "Ekstrakurikuler Pencak Silat",
       desc: 'Pencak Silat adalah seni bela diri tradisional Indonesia yang mengajarkan keterampilan bertarung, disiplin, dan nilai-nilai budaya. Siswa kami dapat mengikuti ekstrakurikuler Pencak Silat untuk mengembangkan fisik, mental, dan karakter melalui latihan yang seimbang dan bermakna.'
     },
+    {
+      img: "carousel/main/IoT.avif",
+      heading: "Ekstrakurikuler Robotik",
+      desc: 'Ekstrakurikuler Robotik merupakan salah satu eskul pengembangan keterampilan teknik dan pemrograman siswa melalui berbagai proyek inovatif. Program kerja kami mencakup pelatihan dasar tentang perangkat keras dan perangkat lunak robotik, kompetisi robot tingkat lokal dan nasional, serta workshop kolaboratif dengan industri teknologi. '
+    },
+    {
+      img: "carousel/main/pramuka.avif",
+      heading: "Ekstrakurikuler Pramuka",
+      desc: 'Ekstrakulikuler Pramuka merupakan eskul wajib di SMK TI BAZMA karena merupakan pondasi awal pengembangan kepemimpinan dan kedisiplinan serta rasa cinta dan rasa tanggung jawab terhadap amanah, masyarakat dan alam serta belajar tentang keberlanjutan dan pelestarian lingkungan, baik di sekolah maupun di masyarakat '
+    },
+    {
+      img: "carousel/main/futsal.avif",
+      heading: "Ekstrakurikuler Futsal",
+      desc: 'Futsal sebagai Ekstrakulikuler olahraga yang merupakan kegiatan permainan kebugaran  untuk melatih kekompakan akan sebuah tim serta mendorong para pemain untuk melatih teknik dalam mengambil keputusan cepat dan tepat agar efektif'
+    },
+
 
 
   ];
@@ -97,14 +118,21 @@ export default function Home() {
                   radius="lg"
                   className="p-0"
                 >
-                  <Image
+                  <ImageWithSkeleton
+                    src="./pak_dahlan.avif"
+                    alt="Foto Pak dahlan"
+                    height={340}
+                    width={275}
+                  />
+                  {/* <ImagewithSe */}
+                  {/* <Image
                     isBlurred
                     alt="Woman listing to music"
                     className="object-cover w-full"
                     height={340}
                     src="./pak_dahlan.avif"
                     width={275}
-                  />
+                  /> */}
                 </Card>
               </NeonGradientCard>
             </div>
@@ -132,10 +160,10 @@ export default function Home() {
               <div className="text-xl leading-8 text-gray-700">
                 <p className={"font-bold"}>Kompetensi Keahlian:</p>
                 <ul className="list-disc pl-6">
-                  <li className="mt-2"><span className="font-bold">Cloud computing</span> <span className="font-bold text-blue-800">(IaaS, PaaS, SaaS)</span></li>
-                  <li className="mt-2"><span className="font-bold">Sistem internet of things</span> <span className="font-bold text-blue-800">(SIoT)</span></li>
-                  <li className="mt-2"><span className="font-bold">Sistem keamanan jaringan</span> <span className="font-bold text-blue-800">(SKJ)</span></li>
-                  <li className="mt-2"><span className="font-bold">Produk kreatif dan kewirausahaan</span> <span className="font-bold text-blue-800">(PKK)</span></li>
+                  <li className="mt-2"><span className="font-bold capitalize">Cloud computing</span> <span className="font-bold text-blue-800">(IaaS, PaaS, SaaS)</span></li>
+                  <li className="mt-2"><span className="font-bold capitalize">Sistem internet of things</span> <span className="font-bold text-blue-800">(SIoT)</span></li>
+                  <li className="mt-2"><span className="font-bold capitalize">Sistem keamanan jaringan</span> <span className="font-bold text-blue-800">(SKJ)</span></li>
+                  <li className="mt-2"><span className="font-bold capitalize">Produk kreatif dan kewirausahaan</span> <span className="font-bold text-blue-800">(PKK)</span></li>
                 </ul>
               </div>
             </div>
@@ -146,22 +174,38 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:justify-end">
               {/* Card Gambar 1 */}
               <div className="relative group w-64 h-80 bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-                <img
-                  src="/img/Mufiz.jpg"
-                  alt="Student Working on Computer"
-                  className="w-full h-full object-cover transition-transform transform group-hover:scale-110"
-                />
+                <Card isFooterBlurred className="w-full h-[320px] col-span-12 sm:col-span-5">
+                  <ImageWithSkeleton
+                    src="/img/Mufiz.jpg"
+                    alt="Student Working on Computer"
+                    height={340}
+                    width={275}
+                  />
+                  <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+                    <div>
+                      <p className="text-white text-bold text-tiny">Komputer & Jaringan</p>
+                    </div>
+                  </CardFooter>
+                </Card>
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
                 <div className="absolute bottom-4 left-4 text-white text-lg font-semibold">Web Programming</div>
               </div>
 
               {/* Card Gambar 2 */}
               <div className="relative group w-64 h-80 bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-                <img
-                  src="/img/rakit.JPG"
-                  alt="Students Building Hardware"
-                  className="w-full h-full object-cover transition-transform transform group-hover:scale-110"
-                />
+                <Card isFooterBlurred className="w-full h-[320px] col-span-12 sm:col-span-5">
+                  <ImageWithSkeleton
+                    src="/img/rakit.JPG"
+                    alt="Students Building Hardware"
+                    height={340}
+                    width={275}
+                  />
+                  <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+                    <div>
+                      <p className="text-white text-bold text-tiny">Komputer & Jaringan</p>
+                    </div>
+                  </CardFooter>
+                </Card>
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
                 <div className="absolute bottom-4 left-4 text-white text-lg font-semibold">Komputer & Jaringan</div>
               </div>
@@ -184,7 +228,7 @@ export default function Home() {
 
       <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
         <BlurFade delay={0.25 * 2} inView>
-          <h1 className="text-4xl font-bold text-blue-800 mb-4">Info PPDB</h1>
+          <h1 className="text-4xl font-bold text-blue-800 mb-8">Info PPDB</h1>
         </BlurFade>
         <BlurFade delay={0.25 * 3} inView>
           <StepperJS />
@@ -192,13 +236,13 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
-      <BlurFade delay={0.25 * 2} inView>
+        <BlurFade delay={0.25 * 2} inView>
 
-        <h1 className="text-4xl font-bold text-blue-800 mb-4">Project siswa</h1>
+          <h1 className="text-4xl font-bold text-blue-800 mb-4">Project siswa</h1>
         </BlurFade>
         <BlurFade delay={0.25 * 3} inView>
 
-        <CardProject />
+          <CardProject />
         </BlurFade>
       </div>
       <Footer />

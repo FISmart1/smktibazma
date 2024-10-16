@@ -40,6 +40,14 @@ export default function CardProject() {
       view: "https://sismako.smktibazma.sch.id/",
     },
     {
+      img:
+        "/img/khatib.jpg",
+      title: "Kaderisasi Imam & Khatib",
+      desc:
+        "A platform designed for school teams to collaborate on various academic and administrative tasks.",
+      view: "https://sismako.team.sch.id/",
+    },
+    {
       img: "https://nextui.org/images/hero-card-complete.jpeg",
       title: "Big Data Sismako - Keasramaan",
       desc:
@@ -53,14 +61,6 @@ export default function CardProject() {
       desc:
         "A blog platform designed to provide engaging and informative content. It features a user-friendly interface for readers to explore various posts and articles, with the ability to manage content efficiently.",
       view: "https://techby-fadhilio.vercel.app/",
-    },
-    {
-      img:
-        "https://firebasestorage.googleapis.com/v0/b/portofolio-database-fadhil.appspot.com/o/SISMAKO-KEASRAMAAN.png?alt=media&token=edd77a91-5f6d-4bb8-a906-41a42166b2ed",
-      title: "Big Data Sismako - Keasramaan",
-      desc:
-        "A platform designed for school teams to collaborate on various academic and administrative tasks.",
-      view: "https://sismako.team.sch.id/",
     },
   ];
 
@@ -82,39 +82,21 @@ export default function CardProject() {
       >
         {list.map((item, index) => (
           <SwiperSlide key={index} className="sm:p-0 p-8">
-            {/* <Card isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-5">
-              <CardHeader className="absolute z-10 top-1 flex-col items-start">
-                <p className="text-tiny text-white/60 uppercase font-bold">{item.Category}</p>
-                <h4 className="text-white font-bold text-2xl">{item.title}</h4>
-              </CardHeader>
-              <Image
-                removeWrapper
-                alt="Card example background"
-                className="z-0 w-full h-full object-cover"
-                src={item.img}
-              />
-              <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-
-                <Button className="text-tiny" color="primary" radius="full" size="sm">
-                  Get in touch
-                </Button>
-              </CardFooter>
-            </Card> */}
             <Card className="w-full col-span-12 sm:col-span-4 h-[300px]">
               <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-                <p className="text-tiny text-white/60 uppercase font-bold">What to watch</p>
+                <p className="text-tiny text-white/60 uppercase font-bold">Proyek Siswa</p>
                 <h4 className="text-white font-medium text-large">{item.title}</h4>
               </CardHeader>
               <Image
                 removeWrapper
                 alt="Card background"
                 className="z-0 w-full h-full object-cover"
-                src="https://nextui.org/images/card-example-4.jpeg"
+                src={item.img}
               />
-              <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+              <CardFooter className="absolute bg-black/40 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
 
-                <Button className="text-tiny" color="primary" radius="full" size="sm">
-                  Get in touch
+                <Button className="text-tiny" color="primary" size="sm">
+                  see more
                 </Button>
               </CardFooter>
             </Card>
@@ -174,8 +156,8 @@ const CardContact: FC<CardContactProps> = ({ icons, title, description, link }) 
       <Divider />
       <CardBody className="flex flex-col py-4">
         <p className="text-sm text-gray-500">
-          <Link href={`mailto:${link}`} className="text-blue-600">
-            {link}
+          <Link href={`${link}`} className="text-blue-600">
+            @smktibazma
           </Link>
         </p>
       </CardBody>
@@ -190,13 +172,13 @@ export function Contact() {
       icons: <IconBrandInstagram />,
       title: "Instagram",
       description: "Telusuri Media Sosial SMK TI BAZMA",
-      link: "@smktibazma",
+      link: "https://www.instagram.com/smktibazma/",
     },
     {
       icons: <IconBrandYoutube />,
       title: "Youtube",
       description: "Telusuri Media Sosial SMK TI BAZMA",
-      link: "@smktibazma",
+      link: "https://youtube.com/@smktibazma",
     },
   ];
   return (
@@ -268,7 +250,7 @@ const CardPpdb: FC<CardPpdbProps> = ({ icons, title, desc }) => {
         </div>
       </CardHeader>
 
-      <CardBody className="text-justify">
+      <CardBody className="lg:text-justify">
         {desc}
       </CardBody>
 
@@ -282,32 +264,32 @@ export function Ppdb() {
     {
       icons: <IconSchool size={30} />,
       title: "Beasiswa Penuh",
-      desc: "SMK TI Bazma memberikan kesempatan belajar siswa berprestasi dari seluruh Indonesia dengan menunjang beasiswa penuh hingga lulus.",
+      desc: "SMK TI Bazma memberikan kesempatan belajar bagi siswa berprestasi dari seluruh Indonesia dengan menunjang beasiswa hingga 100% sampai dengan lulus.",
     },
     {
       icons: <IconBooks />,
       title: "Kurikulum Terpadu",
-      desc: "Memadukan Kurikulum Nasional, Kurikulum Industri dan Kurikulum berbasis Islamic Boarding School (Asrama),",
+      desc: "Memadukan Kurikulum Nasional, Kurikulum Industri dan Kurikulum berbasis Islamic Boarding School  (Asrama).",
     },
     {
       icons: <IconBuildings />,
       title: "Fasilitas Lengkap",
-      desc: "Subsidi penunjang pendidikan seperti perlengkapan belajar, asrama, kesehatan, makan-minum, transportasi penjemputan dan kepulangan",
+      desc: "SMK TI BAZMA memberikan fasilitas pendidikan berupa perlengkapan belajar, asrama, kesehatan, sarana olahraga, makan-minum, transportasi penjemputan dan kepulangan",
     },
     {
       icons: <IconVocabulary />,
       title: "Program Belajar 4 Tahun",
-      desc: "Program keahlian fokus pada SIJA, dan Program pembelajaran 4 tahun, dengan 1 tahun dikhususkan untuk Praktek Kerja Industri (Prakerin).",
+      desc: "Program keahlian berfokus pada SIJA, dan Program pembelajaran 4 tahun, dengan 1 tahun dikhususkan untuk Praktek Kerja Industri (Prakerin).",
     },
     {
       icons: <IconHeartHandshake />,
-      title: "Peluang Magang",
-      desc: "SMK TI BAZMA menjalin kemitraan dengan BUMN, menyediakan peluang magang dengan pencapaian kompetensi profesional yang unggul.",
+      title: "Peluang Prakerin",
+      desc: "SMK TI BAZMA menjalin kemitraan dengan BUMN, menyediakan peluang prakerin dengan pencapaian kompetensi profesional yang unggul.",
     },
     {
       icons: <IconBuildingMosque />,
       title: "Pesantren Berbasis IT",
-      desc: "SMK TI BAZMA membekali siswa dengan program unggulan berbasis IT dan hafalan Al-Qur'an minimal 3 Juz (28, 29, 30). Untuk mencetak pemimpin berkarakter unggul.",
+      desc: "SMK TI BAZMA membekali siswa dengan program unggulan berbasis IT dan hafalan Al-Qur'an minimal 3 Juz (28, 29, 30). Serta ilmu agama seperti Fiqih, Akhlak, dan Tafsir untuk mencetak pemimpin berkarakter unggul.",
     },
   ]
 

@@ -32,7 +32,7 @@ export default function KompotensiKeahlian() {
         subtitle={<span>Press to expand</span>}
         title={
           <h1 className="text-lg font-bold text-blue-800">
-            Apa saja yang dipelajari
+            Apa saja yang dipelajari?
           </h1>
         }
       >

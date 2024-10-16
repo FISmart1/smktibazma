@@ -56,7 +56,7 @@ export default function DocsPage() {
               <BlurFade delay={0.25 * 2} inView>
                 <h1 className=" text-4xl font-bold text-blue-800 mb-4">Visi</h1>
                 <div className="p-6 bg-blue-800 rounded-xl  shadow-md">
-                  <h1 className="text-[19px] lg:text-2xl font-bold text-white text-justify">
+                  <h1 className="text-[16px] lg:text-xl font-bold text-white text-justify">
                     Menjadi sekolah yang melahirkan generasi berkarakter unggul,
                     berkepribadian Islami, mandiri, berprestasi dan menebar
                     manfaat.
@@ -109,13 +109,16 @@ export default function DocsPage() {
                     key="1"
                     aria-label="Accordion 1"
                     title="Misi ke-1"
+                    className="text-lg text-blue-800 font-regular"
+
                   >
                     Menyelenggarakan Sekolah Menengah Kejuruan (SMK) yang berkualitas
                   </AccordionItem>
                   <AccordionItem
                     key="2"
                     aria-label="Accordion 2"
-                    title="Misi ke-2"
+                    title="Misi ke-2" 
+                    className="text-lg text-blue-800 font-regular"
                   >
                     Melahirkan lulusan yang berkarakter unggul siap kerja
                   </AccordionItem>
@@ -123,6 +126,8 @@ export default function DocsPage() {
                     key="3"
                     aria-label="Accordion 3"
                     title="Misi ke-3"
+                    className="text-lg text-blue-800 font-regular"
+
                   >
                     Mewujudkan generasi SDM yang berdaya saing global.
                   </AccordionItem>

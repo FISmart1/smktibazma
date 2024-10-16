@@ -119,7 +119,7 @@ export default function Carousel({ slides }: CarouselProps) {
                                 <div className='text-white w-full flex flex-col md:flex-row mx-auto my-auto px-4 max-w-7xl items-start mb-16'>
                                     <div className='w-full md:w-1/2 '>
                                         <BlurFade delay={0.25} inView>
-                                            <h1 className='text-3xl md:text-6xl font-black leading-tight md:leading-[64px] uppercase'>
+                                            <h1 className='text-3xl md:text-[64px] font-black leading-tight md:leading-[64px] uppercase'>
                                                 {slide.heading}
                                             </h1>
                                         </BlurFade>

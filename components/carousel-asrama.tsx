@@ -12,8 +12,8 @@ const CarouselAsrama: React.FC = () => {
   const asrama = [
     {
       categories: "Asrama",
-      title: "Tempat Wudhu",
-      img: "/fasilitas/asrama/ablution-place.avif",
+      title: "Tempat Cuci",
+      img: "/fasilitas/asrama/laundry.avif",
     },
     {
       categories: "Asrama",
@@ -29,6 +29,16 @@ const CarouselAsrama: React.FC = () => {
       categories: "Asrama",
       title: "Tempat Tidur",
       img: "/fasilitas/asrama/bed.avif",
+    },
+    {
+      categories: "Asrama",
+      title: "Loker Siswa",
+      img: "/fasilitas/asrama/cupboard.avif",
+    },
+    {
+      categories: "Asrama",
+      title: "Barber Shop",
+      img: "/fasilitas/asrama/barbershop.avif",
     },
   ];
   return (
@@ -64,7 +74,7 @@ const CarouselAsrama: React.FC = () => {
               />
               <CardFooter className="absolute bg-gray-500/50 bottom-0 border-t-1 border-zinc-100/30 z-10 justify-between">
                 <div>
-                  <p className="text-white text-tiny">Available soon.</p>
+                  <p className="text-white text-tiny">Available.</p>
                 </div>
               </CardFooter>
             </Card>
@@ -136,7 +146,7 @@ const CarouselSekolah: React.FC = () => {
               />
               <CardFooter className="absolute bg-gray-500/50 bottom-0 border-t-1 border-zinc-100/30 z-10 justify-between">
                 <div>
-                  <p className="text-white text-tiny">Available soon.</p>
+                  <p className="text-white text-tiny">Available.</p>
                 </div>
               </CardFooter>
             </Card>

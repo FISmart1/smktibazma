@@ -18,7 +18,7 @@ export default function Banner({ imgSrc, heading }: BannerProps) {
 
       <div className='relative z-10 w-full flex items-end h-full'>
         <div className='text-white w-full inline-flex mx-auto my-auto px-4 max-w-7xl items-center mb-10'>
-          <h1 className='text-3xl md:text-6xl font-black md:leading-[64px] w-1/2 uppercase'>{heading}</h1>
+          <h1 className='text-5xl md:text-6xl font-black md:leading-[64px] w-1/2 uppercase'>{heading}</h1>
         </div>
       </div>
     </div>

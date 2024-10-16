@@ -28,9 +28,10 @@ import {
 } from "@/components/icons";
 import { Button } from "@nextui-org/button";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
-import { IconSchool, IconUsers, IconHeadset, IconClipboardData, IconId } from "@tabler/icons-react";
+import { IconSchool, IconUsers, IconHeadset, IconClipboardData, IconId, IconBrandInstagram } from "@tabler/icons-react";
 import React from "react";
 import { subtitle } from "./primitives";
+// import { useRouter } from "next/router";
 const icons = {
   chevron: <ChevronDown fill="currentColor" size={16} />,
   profile: <IconSchool className="text-primary" stroke={2} size={30} />,
@@ -40,7 +41,18 @@ const icons = {
   saas: <IconId className="text-primary" stroke={2} size={30} />,
 }
 export const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [showMenu, setShowMenu] = React.useState(false); // State untuk mengontrol tampilan menu
+
+    // Menggunakan useEffect untuk menghapus menu saat refresh
+    React.useEffect(() => {
+      // Setiap kali komponen dimuat, sembunyikan menu
+      setShowMenu(false);
+    }, []);
+  
+    // Fungsi untuk menampilkan menu saat tombol diklik
+    const handleMenuToggle = () => {
+      setShowMenu((prev) => !prev); // Toggle menu
+    };
 
   const searchInput = (
     <Input
@@ -69,7 +81,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo />
-            <p className={subtitle({class: 'text-bold text-xl'})}>SMK TI BAZMA</p>
+            <p className={subtitle({ class: 'text-bold text-xl' })}>SMK TI BAZMA</p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
@@ -162,7 +174,7 @@ export const Navbar = () => {
               </DropdownItem>
               <DropdownItem
                 key="usage_metrics"
-                href="/partner"
+                href="/404"
                 description="Sistem Absensi Sekolah"
 
                 startContent={icons.saas}
@@ -193,7 +205,7 @@ export const Navbar = () => {
               isExternal
               as={Link}
               className="text-sm font-semibold bg-blue-600 text-white"
-              href={siteConfig.links.sponsor}
+              href='/404'
               variant="flat"
             >
               PPDB
@@ -229,13 +241,20 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
+        <Link
+          href="https://www.instagram.com/smktibazma"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IconBrandInstagram color="black" />
         </Link>
-        <NavbarMenuToggle />
+        {/* <NavbarItem className="hidden lg:flex">
+            <ThemeSwitch />
+          </NavbarItem> */}
+        <NavbarMenuToggle onClick={handleMenuToggle}/>
       </NavbarContent>
 
-      <NavbarMenu >
+      <NavbarMenu id="menubar">
         {searchInput}
         <div className="mx-4 mt-2 flex flex-col gap-2">
           <Dropdown>
@@ -322,11 +341,11 @@ export const Navbar = () => {
               </DropdownItem>
               <DropdownItem
                 key="usage_metrics"
-                href="/partner"
                 description="Sistem Absensi Sekolah"
-
                 startContent={icons.saas}
-              >
+                href="/404"
+                // onClick={handleNotFound}
+                >
                 SAAS
               </DropdownItem>
             </DropdownMenu>
@@ -341,7 +360,7 @@ export const Navbar = () => {
                       ? "danger"
                       : "foreground"
                 }
-                href="#"
+                href={item.href}
                 size="lg"
               >
                 {item.label}

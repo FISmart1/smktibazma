@@ -64,17 +64,17 @@ export default function ServicePage() {
             <div className=" lg:w-3/4">
               <Contact />
             </div>
-            <div className="flex flex-col items-center justify-center py-4 px-8 sm:px-6 ">
+            <div className="flex flex-col items-center justify-center py-4 px-8 sm:px-6 " >
               <img
                 src="/img/cta-join.png"
                 className="w-1/2 h-auto mb-6"
                 alt="CTA Join"
               />
-
               <p className="text-center text-base sm:text-lg lg:text-md text-gray-600 mb-6 max-w-xl">
                 Bergabung dengan Saluran Whatsapp SMK TI BAZMA untuk informasi terbaru!!!
               </p>
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-xl py-6 px-8">
+              <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg font-semibold rounded-xl py-6 px-8"   onClick={() => window.open('https://www.whatsapp.com/channel/0029VaX3o1jEKyZBKsNhFk0D', '_blank')}
+              >
                 Join Us
               </Button>
             </div>
