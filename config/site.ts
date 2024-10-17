@@ -9,7 +9,7 @@ export const siteConfig = {
       href: "/donation",
     },
     {
-      label: "Progres Siswa",
+      label: "Team Development",
       href: "https://sismako.smktibazma.sch.id/smktibazma.sch.id",
     },
   ],

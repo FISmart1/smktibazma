@@ -208,7 +208,7 @@ export const Navbar = () => {
               href='/404'
               variant="flat"
             >
-              PPDB
+              Progres Siswa
             </Button>
           </NavbarItem>
 
