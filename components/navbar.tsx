@@ -205,7 +205,7 @@ export const Navbar = () => {
               isExternal
               as={Link}
               className="text-sm font-semibold bg-blue-600 text-white"
-              href='/404'
+              href='https://sismako.smktibazma.sch.id/smktibazma.sch.id'
               variant="flat"
             >
               Progres Siswa

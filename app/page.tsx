@@ -10,6 +10,7 @@ import Timeline from "@/components/stepper";
 import StepperJS from "@/components/stepper";
 import { subtitle } from "@/components/primitives";
 import ImageWithSkeleton from "@/components/image-skeleton";
+import { Link } from "@nextui-org/link";
 
 export default function Home() {
   const slidesData = [
@@ -63,7 +64,7 @@ export default function Home() {
                 color="primary"
                 className="max-w-40 hover:bg-white hover:text-primary-400 hover:border hover:border-primary-400 hidden md:block"
               >
-                Selengkapnya
+                <Link href="/about" className="text-white hover:text-black">Selengkapnya</Link>
               </Button>
             </div>
 
@@ -183,7 +184,7 @@ export default function Home() {
                   />
                   <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
                     <div>
-                      <p className="text-white text-bold text-tiny">Komputer & Jaringan</p>
+                      <p className="text-white text-bold text-tiny">Web Programming</p>
                     </div>
                   </CardFooter>
                 </Card>

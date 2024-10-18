@@ -32,7 +32,7 @@ const truncateText = (text: string, maxLength: number): string => {
 export default function CardProject() {
   const list = [
     {
-      img: "/img/proyek3.png",
+      img: "/img/sismako.avif",
       Category: "SISMAKO",
       title: "Big Data SISMAKO",
       desc:
@@ -48,19 +48,12 @@ export default function CardProject() {
       view: "https://sismako.team.sch.id/",
     },
     {
-      img: "https://nextui.org/images/hero-card-complete.jpeg",
-      title: "Big Data Sismako - Keasramaan",
+      img:
+        "/img/sas.avif",
+      title: "E-Absensi TerIntegrasi Whatsapp",
       desc:
         "A platform designed for school teams to collaborate on various academic and administrative tasks.",
       view: "https://sismako.team.sch.id/",
-    },
-    {
-      img:
-        "https://firebasestorage.googleapis.com/v0/b/portofolio-database-fadhil.appspot.com/o/BLOG.png?alt=media&token=d8b1cf90-c9e3-4659-aead-10d2c358c676",
-      title: "Blog Website",
-      desc:
-        "A blog platform designed to provide engaging and informative content. It features a user-friendly interface for readers to explore various posts and articles, with the ability to manage content efficiently.",
-      view: "https://techby-fadhilio.vercel.app/",
     },
   ];
 
