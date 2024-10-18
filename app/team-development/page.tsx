@@ -60,7 +60,7 @@ function App() {
       </Card>
       <Card className="col-span-12 sm:col-span-4 h-[300px]">
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-          <h4 className="text-white font-medium text-large">DevOps engineer & Guru Pembimbing</h4>
+          <h4 className="text-white font-medium text-large">Guru Development & Pembimbing</h4>
         </CardHeader>
         <Image
           removeWrapper

@@ -53,7 +53,6 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head>
-        <meta name="google-adsense-account" content="ca-pub-9828251836566362"></meta>
       </head>
       <body
         className={clsx(
