@@ -52,7 +52,9 @@ export default function RootLayout({
   ];
   return (
     <html suppressHydrationWarning lang="en">
-      <head />
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-9828251836566362"></meta>
+      </head>
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
@@ -61,7 +63,7 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col h-screen">
-            <Navbar/>
+            <Navbar />
             <main className="  flex-grow">
               {children}
             </main>
