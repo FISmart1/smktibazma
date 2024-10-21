@@ -15,7 +15,7 @@ import { Link } from "@nextui-org/link";
 export default function Home() {
   const slidesData = [
     {
-      img: "carousel/main/guru.avif",
+      img: "carousel/main/guru-4.jpg",
       heading: "Energi Masa Depan Indonesia",
       desc: 'Selamat datang di SMK TI BAZMA, pusat pengembangan pendidikan yang berfokus pada pengembangan keterampilan teknologi informasi yang unggul dan berdaya saing. Kami berkomitmen untuk menciptakan generasi yang siap menghadapi tantangan dunia digital melalui pendidikan berkualitas, fasilitas lengkap, dan kurikulum berbasis teknologi terkini.'
 
@@ -58,7 +58,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col justify-between h-full">
               <h1 className="text-4xl font-bold text-blue-800">
-                Profile Sekolah
+                Profil Sekolah
               </h1>
               <Button
                 color="primary"
@@ -156,7 +156,7 @@ export default function Home() {
 
             <div className="space-y-6">
               <p className={subtitle()}>
-                SIJA adalah perpaduan inovatif antara Teknik Komputer & Jaringan (TKJ) dan Rekayasa Perangkat Lunak (RPL). Kami dilengkapi dengan teknologi terbaru dalam bidang <span className="font-bold">cloud computing</span> untuk mempersiapkan siswa menghadapi tantangan masa depan.
+                SIJA adalah perpaduan inovatif antara Teknik Komputer & Jaringan (TKJ) dan Rekayasa Perangkat Lunak (RPL). Sekolah kami dilengkapi dengan teknologi terbaru dalam bidang <span className="font-bold">cloud computing</span> untuk mempersiapkan siswa menghadapi tantangan masa depan.
               </p>
               <div className="text-xl leading-8 text-gray-700">
                 <p className={"font-bold"}>Kompetensi Keahlian:</p>
@@ -242,7 +242,6 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-blue-800 mb-4">Project siswa</h1>
         </BlurFade>
         <BlurFade delay={0.25 * 3} inView>
-
           <CardProject />
         </BlurFade>
       </div>

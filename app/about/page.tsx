@@ -18,7 +18,7 @@ export default function DocsPage() {
       <section className="flex flex-col items-center justify-center gap-4">
         <Banner
           imgSrc={
-            "https://smktibazma.sch.id/static/media/asrama.d1fa6eec69bfc5732828.jpg"
+            "/banner.avif"
           }
           heading='Profil Sekolah'
         />

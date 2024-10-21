@@ -32,7 +32,7 @@ const truncateText = (text: string, maxLength: number): string => {
 export default function CardProject() {
   const list = [
     {
-      img: "/img/sismako.avif",
+      img: "/project/sismako.avif",
       Category: "SISMAKO",
       title: "Big Data SISMAKO",
       desc:
@@ -49,7 +49,7 @@ export default function CardProject() {
     },
     {
       img:
-        "/img/sas.avif",
+        "/project/sas.png",
       title: "E-Absensi TerIntegrasi Whatsapp",
       desc:
         "A platform designed for school teams to collaborate on various academic and administrative tasks.",

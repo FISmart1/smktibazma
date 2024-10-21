@@ -11,7 +11,8 @@ export default function Donasi() {
     <section className="flex flex-col items-center justify-center gap-4 ">
       <Banner
         imgSrc={
-          "https://smktibazma.sch.id/static/media/masjid.d157934d98cee11f144c.jpg"
+          // "https://smktibazma.sch.id/static/media/masjid.d157934d98cee11f144c.jpg"
+          "/banner.avif"
         }
         heading={'Kemitraan'}
       />

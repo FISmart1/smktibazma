@@ -5,11 +5,11 @@ import { Card } from "@nextui-org/react";
 
 const skills = [
     {
-        img: "https://smktibazma.sch.id/static/media/pertamina-logo.0f8b5fe2cf85d7513ea7.png",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF9_o_8tUKntUT42hTNyudTw2IfQyddaJTfgY31f2PdzzgDqfTzlRp1gZLUGfRSXwBjsc&usqp=CAU",
         link: "https://www.pertamina.com/",
     },
     {
-        img: "https://smktibazma.sch.id/static/media/elnusa-logo.d84e16ea60ac7c8bb895.png",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Jc5zoUGz5xw1ItpDcqBu1F8AWKWWq2fpeQ&s",
         link: "https://www.elnusa.co.id/",
     },
     {
@@ -20,6 +20,7 @@ const skills = [
         img: "https://elnusapetrofin.co.id/wp-content/uploads/2019/12/Logo-1-300x166.jpg", 
         link: "https://elnusapetrofin.co.id/en/about-epn/", 
     },
+    
 ];
 
 const firstRow = skills.slice(0, Math.ceil(skills.length));
@@ -29,7 +30,7 @@ const SkillCard = ({ img, link }: { img: string; link: string }) => {
         <Card
             className={clsx(
                 "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-                "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+                "border-gray-950/[.1] bg-gray-950/[.01]",
                 "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
             )}
         >

@@ -6,18 +6,20 @@ export default function ImageWithSkeleton({
   alt,
   height,
   width,
+  className = "", // tambahkan className sebagai optional prop dengan default value ""
 }: {
   src: string;
   alt: string;
   height?: number; // optional
   width?: number;  // optional
+  className?: string; // optional className prop
 }) {
   const [isLoading, setIsLoading] = useState(true);
 
   // Jika height dan width tidak ada, gunakan class w-full dan h-full
   const imgClass = height && width
-    ? `object-cover rounded-xl block`
-    : `w-full h-full object-cover rounded-xl`;
+    ? `object-cover rounded-xl block ${className}`
+    : `w-full h-full object-cover rounded-xl ${className}`;
 
   return (
     <>

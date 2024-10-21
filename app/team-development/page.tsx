@@ -1,5 +1,6 @@
 'use client';
 
+import ImageWithSkeleton from "@/components/image-skeleton";
 import { Card, CardHeader, CardBody, CardFooter, Image, Button, Skeleton } from "@nextui-org/react";
 
 function App() {
@@ -62,12 +63,14 @@ function App() {
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
           <h4 className="text-white font-medium text-large">Guru Development & Pembimbing</h4>
         </CardHeader>
-        <Image
-          removeWrapper
+        <ImageWithSkeleton
+          width={400}
+          height={300}
           alt="Card background"
           className="z-0 w-full h-full object-cover"
           src="./team/2.png"
         />
+
         <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
           <div>
             <p className="text-tiny text-white/60 uppercase font-bold">I Gde Bayu Priyambada</p>
