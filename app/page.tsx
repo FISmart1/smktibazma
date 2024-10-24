@@ -122,18 +122,8 @@ export default function Home() {
                   <ImageWithSkeleton
                     src="./pak_dahlan.avif"
                     alt="Foto Pak dahlan"
-                    height={340}
-                    width={275}
+                    size={340}
                   />
-                  {/* <ImagewithSe */}
-                  {/* <Image
-                    isBlurred
-                    alt="Woman listing to music"
-                    className="object-cover w-full"
-                    height={340}
-                    src="./pak_dahlan.avif"
-                    width={275}
-                  /> */}
                 </Card>
               </NeonGradientCard>
             </div>
@@ -179,8 +169,7 @@ export default function Home() {
                   <ImageWithSkeleton
                     src="/img/Mufiz.jpg"
                     alt="Student Working on Computer"
-                    height={340}
-                    width={275}
+                    size={340}
                   />
                   <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
                     <div>
@@ -198,8 +187,7 @@ export default function Home() {
                   <ImageWithSkeleton
                     src="/img/rakit.JPG"
                     alt="Students Building Hardware"
-                    height={340}
-                    width={275}
+                    size={340}
                   />
                   <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
                     <div>

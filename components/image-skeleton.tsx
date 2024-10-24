@@ -1,37 +1,52 @@
-import { Image, Skeleton } from "@nextui-org/react";
+'use client';
+
+import { Card, Image, Skeleton } from "@nextui-org/react";
 import { useState } from "react";
 
 export default function ImageWithSkeleton({
   src,
   alt,
-  height,
-  width,
-  className = "", // tambahkan className sebagai optional prop dengan default value ""
+  size,
+  className = "", // tambahkan className sebagai optional prop dengan default value
 }: {
   src: string;
   alt: string;
-  height?: number; // optional
-  width?: number;  // optional
+  size?: number; // tinggi dan lebar disamakan dengan size
   className?: string; // optional className prop
 }) {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Jika height dan width tidak ada, gunakan class w-full dan h-full
-  const imgClass = height && width
-    ? `object-cover rounded-xl block ${className}`
-    : `w-full h-full object-cover rounded-xl ${className}`;
-
   return (
-    <>
-      {isLoading && <Skeleton className="w-[270px] h-[170px] rounded-lg" />}
+    <div className="relative">
+      {/* Skeleton akan tampil saat gambar belum selesai dimuat */}
+      {isLoading && (
+        <Card className={`w-[${size}px] space-y-5 p-4 rounded-lg absolute inset-0`}>
+          <Skeleton className="rounded-lg">
+            <div className="h-24 rounded-lg bg-default-300"></div>
+          </Skeleton>
+          <div className="space-y-3">
+            <Skeleton className="w-3/5 rounded-lg">
+              <div className="h-3 w-3/5 rounded-lg bg-default-200"></div>
+            </Skeleton>
+            <Skeleton className="w-4/5 rounded-lg">
+              <div className="h-3 w-4/5 rounded-lg bg-default-200"></div>
+            </Skeleton>
+            <Skeleton className="w-2/5 rounded-lg">
+              <div className="h-3 w-2/5 rounded-lg bg-default-300"></div>
+            </Skeleton>
+          </div>
+        </Card>
+      )}
+
+      {/* Gambar akan ditampilkan setelah selesai dimuat */}
       <Image
         src={src}
         alt={alt}
-        className={`${imgClass} ${isLoading ? "hidden" : "block"}`}
-        width={width} // tetap gunakan width jika tersedia
-        height={height} // tetap gunakan height jika tersedia
+        className={`${className} ${isLoading ? "hidden" : "block"} object-cover rounded-lg`}
+        width={size}
+        height={size}
         onLoad={() => setIsLoading(false)}
       />
-    </>
+    </div>
   );
 }

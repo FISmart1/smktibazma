@@ -113,9 +113,13 @@ export default function ServicePage() {
                     label="Pilih Status"
                     placeholder="Internal Sekolah"
                     defaultSelectedKeys={[formData.status]}
-                    onSelectionChange={(selected) =>
-                      handleSelectChange(selected as "internalSekolah" | "eksternalSekolah")
-                    }
+                    // onSelectionChange={(selected) =>
+                    //   handleSelectChange(selected as "internalSekolah" | "eksternalSekolah")
+                    // }
+                    onSelectionChange={(selected) => {
+                      const selectedKey = Array.from(selected)[0] as "internalSekolah" | "eksternalSekolah"; // Convert selected Set to string
+                      handleSelectChange(selectedKey);
+                    }}
                     className="max-w-xs"
                   >
                     <SelectItem key="internalSekolah">Internal Sekolah</SelectItem>
