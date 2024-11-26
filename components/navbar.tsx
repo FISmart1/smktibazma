@@ -41,18 +41,16 @@ const icons = {
   saas: <IconId className="text-primary" stroke={2} size={30} />,
 }
 export const Navbar = () => {
-  const [showMenu, setShowMenu] = React.useState(false); // State untuk mengontrol tampilan menu
+  // const [showMenu, setShowMenu] = React.useState(false); // State untuk mengontrol tampilan menu
 
-    // Menggunakan useEffect untuk menghapus menu saat refresh
-    React.useEffect(() => {
-      // Setiap kali komponen dimuat, sembunyikan menu
-      setShowMenu(false);
-    }, []);
+  //   React.useEffect(() => {
+  //     setShowMenu(false);
+  //   }, []);
   
-    // Fungsi untuk menampilkan menu saat tombol diklik
-    const handleMenuToggle = () => {
-      setShowMenu((prev) => !prev); // Toggle menu
-    };
+  //   // Fungsi untuk menampilkan menu saat tombol diklik
+  //   const handleMenuToggle = () => {
+  //     setShowMenu((prev) => !prev); // Toggle menu
+  //   };
 
   const searchInput = (
     <Input
@@ -251,7 +249,7 @@ export const Navbar = () => {
         {/* <NavbarItem className="hidden lg:flex">
             <ThemeSwitch />
           </NavbarItem> */}
-        <NavbarMenuToggle onClick={handleMenuToggle}/>
+        <NavbarMenuToggle />
       </NavbarContent>
 
       <NavbarMenu id="menubar">

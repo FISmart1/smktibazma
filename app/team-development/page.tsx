@@ -15,7 +15,7 @@ const teamMembers = [
     imageSrc: "./team/3.png",
   },
   {
-    role: "Back-End Developer & UX",
+    role: "User Experience",
     name: "Attar Rifai",
     imageSrc: "./team/5.png",
   },

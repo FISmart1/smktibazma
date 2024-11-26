@@ -15,33 +15,33 @@ import { Link } from "@nextui-org/link";
 export default function Home() {
   const slidesData = [
     {
-      img: "carousel/main/guru-4.jpg",
+      img: "carousel/main/guru.webp",
       heading: "Energi Masa Depan Indonesia",
       desc: 'Selamat datang di SMK TI BAZMA, pusat pengembangan pendidikan yang berfokus pada pengembangan keterampilan teknologi informasi yang unggul dan berdaya saing. Kami berkomitmen untuk menciptakan generasi yang siap menghadapi tantangan dunia digital melalui pendidikan berkualitas, fasilitas lengkap, dan kurikulum berbasis teknologi terkini.'
 
     },
     {
-      img: "carousel/main/tasmi.avif",
+      img: "carousel/main/tasmi.webp",
       heading: `JAGO IT, PINTER NGAJI`,
       desc: "SMK TI BAZMA merupakan sekolah yang berfokus dalam pengembangan bidang Teknologi IT serta diimbangi juga dengan pembelajar dalam bidang ilmu agama seperti seperti Fiqih, akhlak, Tajwid dan Tafsir serta kaderisasi iman dan khotib. Selain itu, diwajibkan juga untuk para peserta didik menghafal Al Qur'an dan menyetorkan kepada mudabir yakni juz 28, 29 dan 30 secara mutqin."
     },
     {
-      img: "carousel/main/silat.avif",
+      img: "carousel/main/silat.webp",
       heading: "Ekstrakurikuler Pencak Silat",
       desc: 'Pencak Silat adalah seni bela diri tradisional Indonesia yang mengajarkan keterampilan bertarung, disiplin, dan nilai-nilai budaya. Siswa kami dapat mengikuti ekstrakurikuler Pencak Silat untuk mengembangkan fisik, mental, dan karakter melalui latihan yang seimbang dan bermakna.'
     },
     {
-      img: "carousel/main/IoT.avif",
+      img: "carousel/main/IoT.webp",
       heading: "Ekstrakurikuler Robotik",
       desc: 'Ekstrakurikuler Robotik merupakan salah satu eskul pengembangan keterampilan teknik dan pemrograman siswa melalui berbagai proyek inovatif. Program kerja kami mencakup pelatihan dasar tentang perangkat keras dan perangkat lunak robotik, kompetisi robot tingkat lokal dan nasional, serta workshop kolaboratif dengan industri teknologi. '
     },
     {
-      img: "carousel/main/pramuka.avif",
+      img: "carousel/main/pramuka.webp",
       heading: "Ekstrakurikuler Pramuka",
       desc: 'Ekstrakulikuler Pramuka merupakan eskul wajib di SMK TI BAZMA karena merupakan pondasi awal pengembangan kepemimpinan dan kedisiplinan serta rasa cinta dan rasa tanggung jawab terhadap amanah, masyarakat dan alam serta belajar tentang keberlanjutan dan pelestarian lingkungan, baik di sekolah maupun di masyarakat '
     },
     {
-      img: "carousel/main/futsal.avif",
+      img: "carousel/main/futsal.webp",
       heading: "Ekstrakurikuler Futsal",
       desc: 'Futsal sebagai Ekstrakulikuler olahraga yang merupakan kegiatan permainan kebugaran  untuk melatih kekompakan akan sebuah tim serta mendorong para pemain untuk melatih teknik dalam mengambil keputusan cepat dan tepat agar efektif'
     },
@@ -113,14 +113,13 @@ export default function Home() {
                 </h1>
               </div>
               <NeonGradientCard className="border-none max-w-[275px] object-fit">
-
                 <Card
                   isFooterBlurred
                   radius="lg"
                   className="p-0"
                 >
                   <ImageWithSkeleton
-                    src="./pak_dahlan.avif"
+                    src="./pak_dahlan.webp"
                     alt="Foto Pak dahlan"
                     size={340}
                   />
@@ -167,7 +166,7 @@ export default function Home() {
               <div className="relative group w-64 h-80 bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
                 <Card isFooterBlurred className="w-full h-[320px] col-span-12 sm:col-span-5">
                   <ImageWithSkeleton
-                    src="/img/Mufiz.jpg"
+                    src="/img/Mufiz.webp"
                     alt="Student Working on Computer"
                     size={340}
                   />
@@ -185,7 +184,7 @@ export default function Home() {
               <div className="relative group w-64 h-80 bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
                 <Card isFooterBlurred className="w-full h-[320px] col-span-12 sm:col-span-5">
                   <ImageWithSkeleton
-                    src="/img/rakit.JPG"
+                    src="/img/rakit.webp"
                     alt="Students Building Hardware"
                     size={340}
                   />
