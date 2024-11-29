@@ -132,8 +132,8 @@ export default function PPDB() {
                         <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-6xl">Daftarkan Dirimu Sekarang!</h1>
                         <p className="mt-6 text-lg leading-8 text-gray-600">Daftar Sebelum 31 Januari 2025, Pendaftar yang mengalami kesulitan atau keterbatasan dalam mengakses formulir online dapat menghubungi Pak Dzikri.</p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
-                            <a href="#" className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500">Contact</a>
-                            <a href="#" className="text-sm font-semibold text-gray-900">Daftar &rarr;</a>
+                            <a target="_blank" rel="noreferrer" href="https://wa.me/6281215931522" className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500">Contact</a>
+                            <a href="/ppdb" target="_self" className="text-sm font-semibold text-gray-900">Daftar &rarr;</a>
                         </div>
                     </div>
                     <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl">

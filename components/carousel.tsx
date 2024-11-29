@@ -110,6 +110,7 @@ export default function Carousel({ slides }: CarouselProps) {
                                     src={slide.img}
                                     alt="coba"
                                     className='w-full h-full object-cover object-center'
+                                    loading="eager"
                                 />
                             </div>
 

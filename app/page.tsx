@@ -45,9 +45,6 @@ export default function Home() {
       heading: "Ekstrakurikuler Futsal",
       desc: 'Futsal sebagai Ekstrakulikuler olahraga yang merupakan kegiatan permainan kebugaran  untuk melatih kekompakan akan sebuah tim serta mendorong para pemain untuk melatih teknik dalam mengambil keputusan cepat dan tepat agar efektif'
     },
-
-
-
   ];
 
   return (
