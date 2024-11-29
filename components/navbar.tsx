@@ -18,10 +18,6 @@ import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  HeartFilledIcon,
   SearchIcon,
   Logo,
   ChevronDown
@@ -31,7 +27,7 @@ import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-o
 import { IconSchool, IconUsers, IconHeadset, IconClipboardData, IconId, IconBrandInstagram } from "@tabler/icons-react";
 import React from "react";
 import { subtitle } from "./primitives";
-// import { useRouter } from "next/router";
+
 const icons = {
   chevron: <ChevronDown fill="currentColor" size={16} />,
   profile: <IconSchool className="text-primary" stroke={2} size={30} />,
@@ -41,16 +37,6 @@ const icons = {
   saas: <IconId className="text-primary" stroke={2} size={30} />,
 }
 export const Navbar = () => {
-  // const [showMenu, setShowMenu] = React.useState(false); // State untuk mengontrol tampilan menu
-
-  //   React.useEffect(() => {
-  //     setShowMenu(false);
-  //   }, []);
-  
-  //   // Fungsi untuk menampilkan menu saat tombol diklik
-  //   const handleMenuToggle = () => {
-  //     setShowMenu((prev) => !prev); // Toggle menu
-  //   };
 
   const searchInput = (
     <Input
@@ -201,12 +187,13 @@ export const Navbar = () => {
           <NavbarItem className="hidden lg:flex">
             <Button
               isExternal
+              target="_self"
               as={Link}
               className="text-sm font-semibold bg-blue-600 text-white"
-              href='https://sismako.smktibazma.sch.id/smktibazma.sch.id'
+              href='/ppdb'
               variant="flat"
             >
-              Progres Siswa
+              PPDB
             </Button>
           </NavbarItem>
 
@@ -246,9 +233,9 @@ export const Navbar = () => {
         >
           <IconBrandInstagram color="black" />
         </Link>
-        {/* <NavbarItem className="hidden lg:flex">
+        <NavbarItem className="hidden lg:flex">
             <ThemeSwitch />
-          </NavbarItem> */}
+          </NavbarItem>
         <NavbarMenuToggle />
       </NavbarContent>
 

@@ -214,14 +214,14 @@ export default function Home() {
         </BlurFade>
       </div>
 
-      <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
+      {/* <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
         <BlurFade delay={0.25 * 2} inView>
           <h1 className="text-4xl font-bold text-blue-800 mb-8">Info PPDB</h1>
         </BlurFade>
         <BlurFade delay={0.25 * 3} inView>
-          <StepperJS />
+          <StepperPPDB />
         </BlurFade>
-      </div>
+      </div> */}
 
       <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
         <BlurFade delay={0.25 * 2} inView>

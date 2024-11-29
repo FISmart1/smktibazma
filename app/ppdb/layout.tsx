@@ -4,7 +4,7 @@ export default function DocsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="relative flex flex-col h-screen">
+    <section className="  h-screen">
           {children}
       </section>
   );

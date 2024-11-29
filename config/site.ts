@@ -12,6 +12,10 @@ export const siteConfig = {
       label: "Team Dev",
       href: "/team-development",
     },
+    {
+      label: "Progres Siswa",
+      href: "https://sismako.smktibazma.sch.id/smktibazma.sch.id",
+    },
   ],
   navMenuItems: [
     {
@@ -19,12 +23,16 @@ export const siteConfig = {
       href: "/donation",
     },
     {
-      label: "Team Development",
+      label: "Team Dev",
       href: "/team-development",
     },
     {
       label: "Progres Siswa",
       href: "https://sismako.smktibazma.sch.id/smktibazma.sch.id",
+    },
+    {
+      label: "PPDB",
+      href: "/ppdb",
     },
   ],
   links: {

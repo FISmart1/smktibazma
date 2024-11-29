@@ -1,101 +1,147 @@
 "use client";
-import { Image } from "@nextui-org/react";
-import { Accordion, AccordionItem } from "@nextui-org/react";
+
+import { Image, Accordion, AccordionItem, Snippet } from "@nextui-org/react";
 import Description from "@/components/desc";
 import Footer from "@/components/footer";
-import { Snippet } from "@nextui-org/react";
+import BlurFade from "@/components/magicui/blur-fade";
+import StepperPpdb from "@/components/stepper";
 
 export default function PPDB() {
+    const profileContent = (
+        <div className="text-lg text-gray-500 text-justify">
+            <h1 className="text-4xl text-blue-700 font-extrabold py-3">
+                Profil Sekolah
+            </h1>
+            <p>
+                Merupakan sekolah vokasi berasrama yang fasilitas maupun operasionalnya didanai dari pengelolaan ZISWAF
+                dan sumber dana sosial kemanusiaan lainnya yang diamanahkan oleh masyarakat.
+            </p>
+            <p className="mt-4">
+                SMK TI BAZMA menyelenggarakan program pembelajaran yang ditempuh selama 4 tahun (3 tahun pembelajaran) di sekolah
+                dan 1 tahun Praktik Kerja Lapang.
+            </p>
+            <Accordion variant="splitted" className="mt-4">
+                <AccordionItem key="1" title="Kompetensi Keahlian">
+                    SIJA (Sistem Informatika, Jaringan & Aplikasi) dengan kombinasi kurikulum berbasis asrama.
+                </AccordionItem>
+                <AccordionItem key="2" title="Mitra Industri">
+                    <ul className="list-disc pl-5 space-y-2">
+                        {[
+                            "Pertalife Insurance",
+                            "Shared Services Pertamina",
+                            "Pertamina Training and Consulting (PTC)",
+                            "Pertamina Hulu Rokan",
+                            "Pertamina Retail",
+                            "Pertamina Patra Niaga",
+                            "Elnusa Petrofin",
+                            "Universitas Pertamina",
+                            "Yayasan Kesehatan Pertamina",
+                            "PT. Sanbersy",
+                        ].map((partner, idx) => (
+                            <li key={idx} className="hover:text-blue-500">
+                                {partner}
+                            </li>
+                        ))}
+                    </ul>
+                </AccordionItem>
+            </Accordion>
+        </div>
+    );
+
+    const ppdbContent = (
+        <div className="text-lg text-gray-500 text-justify">
+            <h1 className="text-4xl text-blue-700 font-extrabold py-3">
+                Pembukaan PPDB
+            </h1>
+            <Accordion variant="splitted">
+                <AccordionItem key="1" title="Persyaratan Pendaftar">
+                    <ul className="list-disc pl-5 space-y-2">
+                        {[
+                            "Laki-laki Muslim dan mampu membaca Al-Qur'an dengan baik",
+                            "Berasal dari keluarga tidak mampu (dibuktikan dengan SKTM dari Masjid setempat)",
+                            "Lulus jenjang SMP/MTs/Sederajat pada TP 2023 atau 2024",
+                            "Usia maksimal 17 tahun pada tanggal 30 Juni 2025",
+                            "Sehat jasmani dan rohani (tidak buta warna, tidak merokok dan tidak mempunyai penyakit menular)",
+                            "Berkelakuan baik dan tidak memiliki riwayat kejahatan",
+                            "Mendapat persetujuan Orangtua/Wali untuk tinggal di asrama selama masa pendidikan",
+                            "Memiliki minat yang tinggi terhadap dunia digital dan teknologi informasi.",
+                        ].map((requirement, idx) => (
+                            <li key={idx} className="hover:text-blue-500">
+                                {requirement}
+                            </li>
+                        ))}
+                    </ul>
+                </AccordionItem>
+                <AccordionItem key="2" title="Dokumen Pendukung">
+                    <ul className="list-disc pl-5 space-y-2">
+                        {[
+                            "Kartu Keluarga",
+                            "Pas foto berwarna terbaru",
+                            "SKTM dari Masjid Setempat",
+                            "Surat rekomendasi Wali Kelas/Guru SMP",
+                            "Foto berwarna rumah yang ditempati (tampak depan, samping, kamar tidur, ruang tamu, dapur, kamar mandi)",
+                            "Membuat essay/karangan bebas tentang “Peran saya sebagai pemuda di Era Digital” PPDB SMK TI BAZMA",
+                        ].map((document, idx) => (
+                            <li key={idx} className="hover:text-blue-500">
+                                {document}
+                            </li>
+                        ))}
+                    </ul>
+                </AccordionItem>
+            </Accordion>
+            {/* <p className="mt-6">
+                ⚠️ Pendaftar yang mengalami kesulitan atau keterbatasan dalam mengakses formulir online dapat menghubungi <br />
+                Pak Dzikri <Snippet symbol="+62" size="sm" variant="bordered" color="primary">812-1593-1522</Snippet>
+            </p> */}
+        </div>
+    );
+
     return (
-        <section className="flex flex-col items-center justify-center gap-4 ">
-            <div className='relative w-full lg:h-[700px]'>
-                {/* object-cover object-center top-0 left-0 right-0 bottom-0 */}
+        <section className="flex flex-col items-center justify-center gap-4">
+            <div>
                 <Image
-                    isBlurred
+                    isZoomed
                     src="/ppdb/banner.webp"
-                    alt='Background PPDB'
-                    className='w-full  rounded-xl shadow-xl'
+                    alt="Background PPDB"
+                    className="w-full h-auto cursor-grab"
                     loading="eager"
                 />
             </div>
-
-            <div className="container mx-auto my-auto max-w-5xl mt-2">
-                <Description
-                    description={
-                        <div className="text-lg text-gray-500 text-justify">
-                            <h1 className="text-4xl text-blue-700 font-extrabold py-3 ">
-                                Profil Sekolah
-                            </h1>
-                            <p>
-                                Merupakan sekolah vokasi berasrama yang fasilitas maupun operasionalnya didanai dari pengelolaan ZISWAF
-                                dan sumber dana sosial kemanusiaan lainnya yang diamanahkan oleh masyarakat.
-                            </p>
-                            <br />
-                            <p>
-                                SMK TI BAZMA menyelenggarakan program pembelajaran yang ditempuh
-                                selama 4 tahun (3 tahun pembelajaran <br /> di sekolah dan 1 tahun Praktik Kerja Lapang)
-                            </p>
-                            <br />
-                            <Accordion variant="shadow">
-                                <AccordionItem key="1" aria-label="Accordion 1" title="Kompetensi Keahlian">
-                                    SIJA (Sistem Informatika, Jaringan & Aplikasi) dengan kombinasi kurikulum berbasis asrama.
-                                </AccordionItem>
-                                <AccordionItem key="2" aria-label="Accordion 2" title="Mitra Industri">
-                                    <ul className="list-disc pl-5 space-y-2">
-                                        <li className="hover:text-blue-500">Pertamina Hulu Energi</li>
-                                        <li className="hover:text-blue-500">Pertamina Patra Niaga</li>
-                                        <li className="hover:text-blue-500">Pertalife</li>
-                                        <li className="hover:text-blue-500">Universitas Pertamina</li>
-                                        <li className="hover:text-blue-500">FOZ</li>
-                                        <li className="hover:text-blue-500">Rumah Amal Salman</li>
-                                        <li className="hover:text-blue-500">PT. Sanbersy</li>
-                                    </ul>
-                                </AccordionItem>
-                            </Accordion>
-                        </div>
-                    }
-                />
+            <div className="container mx-auto max-w-5xl mt-2">
+                <Description description={profileContent} />
+            </div>
+            <div className="container mx-auto max-w-5xl mt-5">
+                <Description description={ppdbContent} />
             </div>
 
-            <div className="container mx-auto my-auto max-w-5xl mt-5">
-                <Description
-                    description={
-                        <div className="text-lg text-gray-500 text-justify">
-                            <h1 className="text-4xl text-blue-700 font-extrabold py-3 ">
-                                Pembukaan PPDB
-                            </h1>
-                            <Accordion variant="shadow">
-                                <AccordionItem key="1" aria-label="Accordion 2" title="Persyaratan Pendaftar">
-                                    <ul className="list-disc pl-5 space-y-2">
-                                        <li className="hover:text-blue-500">Laki-laki Muslim dan mampu membaca Al-Qur'an dengan baik</li>
-                                        <li className="hover:text-blue-500">Berasal dari keluarga tidak mampu (dibuktikan dengan SKTM dari Masjid setempat)</li>
-                                        <li className="hover:text-blue-500">Lulus jenjang SMP/MTs/Sederajat pada TP 2023 atau 2024</li>
-                                        <li className="hover:text-blue-500">Usia maksimal 17 tahun pada tanggal 30 Juni 2025</li>
-                                        <li className="hover:text-blue-500">Sehat jasmani dan rohani (tidak buta warna, tidak merokok dan tidak mempunyai penyakit menular)</li>
-                                        <li className="hover:text-blue-500">Berkelakuan baik dan tidak memiliki riwayat kejahatan</li>
-                                        <li className="hover:text-blue-500">Mendapat persetujuan Orangtua/Wali untuk tinggal di asrama selama masa pendidikan                                        </li>
-                                        <li className="hover:text-blue-500">Memiliki minat yang tinggi terhadap dunia digital dan teknologi informasi.                                        </li>
-                                    </ul>
-                                </AccordionItem>
-                                <AccordionItem key="2" aria-label="Accordion 2" title="Dokumen Pendukung">
-                                    <ul className="list-disc pl-5 space-y-2">
-                                        <li className="hover:text-blue-500">Kartu Keluarga.</li>
-                                        <li className="hover:text-blue-500">Pas foto berwarna terbaru.</li>
-                                        <li className="hover:text-blue-500">SKTM dari Masjid Setempat.</li>
-                                        <li className="hover:text-blue-500">Surat rekomendasi Wali Kelas/Guru SMP.</li>
-                                        <li className="hover:text-blue-500">Foto berwarna rumah yang ditempati (tampak depan, tampak samping, kamar tidur, ruang tamu, dapur dan kamar mandi)</li>
-                                        <li className="hover:text-blue-500">Membuat essay/karangan bebas tentang “Peran saya sebagai pemuda di Era Digital”  PPDB SMK TI BAZMA.</li>
-                                    </ul>
-                                </AccordionItem>
-                            </Accordion>
-                            <p className="mt-6">
-                                ⚠️ Pendaftar yang mengalami kesulitan atau keterbatasan dalam mengakses formulir online dapat menghubungi <br />
-                                Pak Dzikri <Snippet symbol="+62" size="sm" variant="bordered" color="primary">812-1593-1522</Snippet>
-                            </p>
-                        </div>
-                    }
-                />
+            <div className="container mx-auto max-w-5xl mt-2 px-4">
+
+                <BlurFade delay={0.25 * 2} inView>
+
+                    <h1 className="text-4xl text-blue-700 font-extrabold py-3 mb-8">
+                        Info PPDB
+                    </h1>
+                    <StepperPpdb />
+                </BlurFade>
             </div>
+
+
+            <div className="container mx-auto max-w-5xl mt-6">
+                <BlurFade delay={0.25 * 2} inView>
+                    <div className="mx-auto max-w-2xl py-35 sm:py-50 text-center">
+                        <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-6xl">Daftarkan Dirimu Sekarang!</h1>
+                        <p className="mt-6 text-lg leading-8 text-gray-600">Daftar Sebelum 31 Januari 2025, Pendaftar yang mengalami kesulitan atau keterbatasan dalam mengakses formulir online dapat menghubungi Pak Dzikri.</p>
+                        <div className="mt-10 flex items-center justify-center gap-x-6">
+                            <a href="#" className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500">Contact</a>
+                            <a href="#" className="text-sm font-semibold text-gray-900">Daftar &rarr;</a>
+                        </div>
+                    </div>
+                    <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl">
+                        <div className="relative left-[calc(50%+3rem)] w-[36rem] -translate-x-1/2 bg-gradient-to-tr from-pink-300 to-indigo-300 opacity-30 sm:w-[72rem]"></div>
+                    </div>
+                </BlurFade>
+            </div>
+
 
             <Footer />
         </section>

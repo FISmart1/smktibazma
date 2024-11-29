@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "https://smktibazma.sch.id/favicon.ico",
+    icon: "logo.avif",
   },
 };
 
