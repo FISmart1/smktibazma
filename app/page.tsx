@@ -7,7 +7,7 @@ import BlurFade from "@/components/magicui/blur-fade";
 import Carousel from "@/components/carousel";
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
 import Timeline from "@/components/stepper";
-import StepperJS from "@/components/stepper";
+import StepperPpdb from "@/components/stepper";
 import { subtitle } from "@/components/primitives";
 import ImageWithSkeleton from "@/components/image-skeleton";
 import { Link } from "@nextui-org/link";
@@ -211,14 +211,29 @@ export default function Home() {
         </BlurFade>
       </div>
 
-      {/* <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
+      <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
         <BlurFade delay={0.25 * 2} inView>
-          <h1 className="text-4xl font-bold text-blue-800 mb-8">Info PPDB</h1>
+          <h1 className="text-4xl font-bold text-blue-800 mb-8 mt-4">Info PPDB</h1>
         </BlurFade>
         <BlurFade delay={0.25 * 3} inView>
-          <StepperPPDB />
+          <StepperPpdb />
         </BlurFade>
-      </div> */}
+      </div>
+
+      <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
+        <BlurFade delay={0.25 * 2} inView>
+          <div className="mx-auto max-w-2xl py-35 sm:py-50 text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-6xl">Daftarkan Dirimu Sekarang!</h1>
+            <p className="mt-6 text-lg leading-8 text-gray-600">Daftar Sebelum 31 Januari 2025, Pendaftar yang mengalami kesulitan atau keterbatasan dalam mengakses formulir online dapat menghubungi Kami.</p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <a target="_self" rel="noreferrer" href="/ppdb" className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500">Daftar sekarang &rarr;</a>
+            </div>
+          </div>
+          <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl">
+            <div className="relative left-[calc(50%+3rem)] w-[36rem] -translate-x-1/2 bg-gradient-to-tr from-pink-300 to-indigo-300 opacity-30 sm:w-[72rem]"></div>
+          </div>
+        </BlurFade>
+      </div>
 
       <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
         <BlurFade delay={0.25 * 2} inView>
