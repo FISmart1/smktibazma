@@ -5,34 +5,34 @@ import { Card, CardHeader, CardBody, CardFooter, Image, Button, Skeleton } from 
 
 const teamMembers = [
   {
-    role: "Front-End Developer",
+    role: "Lead Front-End Developer",
     name: "Fadhil Rabbani",
-    imageSrc: "./team/1.png",
+    imageSrc: "./team/1.webp",
   },
   {
     role: "Front-End Developer & UI/UX",
     name: "M. Abdullah Al-Aziz",
-    imageSrc: "./team/3.png",
+    imageSrc: "./team/3.webp",
   },
   {
     role: "User Experience",
     name: "Attar Rifai",
-    imageSrc: "./team/5.png",
+    imageSrc: "./team/5.webp",
   },
   {
     role: "Guru Development & Pembimbing",
     name: "I Gde Bayu Priyambada",
-    imageSrc: "./team/2.png",
+    imageSrc: "./team/2.webp",
   },
   {
     role: "Back-End Developer",
     name: "Mufiz Ihsanulhaq",
-    imageSrc: "./team/4.png",
+    imageSrc: "./team/4.webp",
   },
   {
     role: "Back-End Developer",
     name: "M. Saeful Romadhon",
-    imageSrc: "./team/6.png",
+    imageSrc: "./team/6.webp",
   },
 ];
 
@@ -52,6 +52,8 @@ function App() {
               className="object-cover"
               src={member.imageSrc}
               onLoad={() => setIsLoaded(true)}
+              isZoomed
+              isBlurred
             />
           </Skeleton>
           <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">

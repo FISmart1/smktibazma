@@ -5,6 +5,8 @@ import Description from "@/components/desc";
 import Footer from "@/components/footer";
 import BlurFade from "@/components/magicui/blur-fade";
 import StepperPpdb from "@/components/stepper";
+import { DaftarMitra } from "./partner";
+import { CoolMode } from "@/components/magicui/cool-mode";
 
 export default function PPDB() {
     const profileContent = (
@@ -24,7 +26,7 @@ export default function PPDB() {
                 <AccordionItem key="1" title="Kompetensi Keahlian">
                     SIJA (Sistem Informatika, Jaringan & Aplikasi) dengan kombinasi kurikulum berbasis asrama.
                 </AccordionItem>
-                <AccordionItem key="2" title="Mitra Industri">
+                {/* <AccordionItem key="2" title="Mitra Industri">
                     <ul className="list-disc pl-5 space-y-2">
                         {[
                             "Pertalife Insurance",
@@ -43,8 +45,13 @@ export default function PPDB() {
                             </li>
                         ))}
                     </ul>
-                </AccordionItem>
+                </AccordionItem> */}
             </Accordion>
+
+            <h1 className="text-4xl text-blue-700 font-extrabold py-3 mt-10">
+                Daftar Mitra
+            </h1>
+            <DaftarMitra/>
         </div>
     );
 
@@ -59,7 +66,7 @@ export default function PPDB() {
                         {[
                             "Laki-laki Muslim dan mampu membaca Al-Qur'an dengan baik",
                             "Berasal dari keluarga tidak mampu (dibuktikan dengan SKTM dari Masjid setempat)",
-                            "Lulus jenjang SMP/MTs/Sederajat pada TP 2023 atau 2024",
+                            "Lulus jenjang SMP/MTs/Sederajat pada TP 2024 atau 2025",
                             "Usia maksimal 17 tahun pada tanggal 30 Juni 2025",
                             "Sehat jasmani dan rohani (tidak buta warna, tidak merokok dan tidak mempunyai penyakit menular)",
                             "Berkelakuan baik dan tidak memiliki riwayat kejahatan",
@@ -110,18 +117,21 @@ export default function PPDB() {
             <div className="container mx-auto max-w-5xl mt-2">
                 <Description description={profileContent} />
             </div>
-            <div className="container mx-auto max-w-5xl mt-5">
+            <div className="container mx-auto max-w-5xl my-10">
                 <Description description={ppdbContent} />
+
+            </div>
+            <div className="container mx-auto max-w-5xl my-10 px-4">
+                <h1 className="text-4xl text-blue-700 font-extrabold ">
+                    Info PPDB
+                </h1>
             </div>
 
-            <div className="container mx-auto max-w-5xl mt-2 px-4">
-
+            <div className="container mx-auto px-4 max-w-7xl mt-0">
                 <BlurFade delay={0.25 * 2} inView>
-
-                    <h1 className="text-4xl text-blue-700 font-extrabold py-3 mb-8">
-                        Info PPDB
-                    </h1>
-                    <StepperPpdb />
+                    <div className="overflow-x-auto flex items-center justify-start scrollbar-width-none [-ms-overflow-style:'none'] [&::-webkit-scrollbar]:hidden">
+                        <StepperPpdb />
+                    </div>
                 </BlurFade>
             </div>
 
@@ -133,7 +143,9 @@ export default function PPDB() {
                         <p className="mt-6 text-lg leading-8 text-gray-600">Daftar Sebelum 31 Januari 2025, Pendaftar yang mengalami kesulitan atau keterbatasan dalam mengakses formulir online dapat menghubungi Kami.</p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a target="_blank" rel="noreferrer" href="https://wa.me/6281215931522" className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500">Contact</a>
+                            <CoolMode>
                             <a href="/ppdb" target="_self" className="text-sm font-semibold text-gray-900">Daftar &rarr;</a>
+                            </CoolMode>
                         </div>
                     </div>
                     <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl">

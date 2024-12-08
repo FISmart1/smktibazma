@@ -2,8 +2,7 @@
 import Banner from "@/components/banner";
 import Description from "@/components/desc";
 import Footer from "@/components/footer";
-import Marquee from "@/components/magicui/marquee";
-import { SkillsMarquee } from "@/components/demo";
+import { DaftarMitra } from "../ppdb/partner";
 
 
 export default function Donasi() {
@@ -18,7 +17,7 @@ export default function Donasi() {
       />
       <div className="container mx-auto my-auto px-4 max-w-5xl mt-10">
         <h1 className="text-4xl font-bold text-blue-800">Daftar Mitra</h1>
-        <Description 
+        <Description
           description={
             <div className="py-6 text-justify">
               <p className="text-lg text-gray-500">
@@ -28,14 +27,14 @@ export default function Donasi() {
                 emosional, dan spiritual yang baik, siswa-siswa ini diharapkan
                 dapat menjadi generasi unggul dan berdaya saing global.
               </p>
-              <br/>
+              <br />
               <p className="text-lg text-gray-500">
                 Oleh karena itu, SMK TI Bazma menjalin kerja sama dengan
                 berbagai mitra Dunia Usaha dan Dunia Industri (DU/DI) sebagai
                 upaya menyelaraskan kebutuhan industri dengan persiapan SDM yang
                 kompeten. Bentuk kerja sama tersebut, antara lain:
               </p>
-              <br/>
+              <br />
 
               <ol className="list-decimal ml-6 text-lg text-gray-500">
                 <li>
@@ -54,7 +53,7 @@ export default function Donasi() {
         />
       </div>
       <div className="container mx-auto my-auto px-4 max-w-7xl">
-        <SkillsMarquee />
+        <DaftarMitra />
       </div>
       <Footer />
     </section>
