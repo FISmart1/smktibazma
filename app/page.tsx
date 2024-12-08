@@ -59,9 +59,9 @@ export default function Home() {
               </h1>
               <Button
                 color="primary"
-                className="max-w-40 hover:bg-white hover:text-primary-400 hover:border hover:border-primary-400 hidden md:block"
+                className="max-w-40 bg-blue-800 hidden md:block "
               >
-                <Link href="/about" className="text-white hover:text-black">Selengkapnya</Link>
+                <Link href="/about" className="text-white  " >Selengkapnya</Link>
               </Button>
             </div>
 

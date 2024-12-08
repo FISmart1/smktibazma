@@ -144,7 +144,7 @@ export default function DocsPage() {
           </BlurFade>
           <BlurFade delay={0.25 * 4} inView>
             <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
-              <img src="https://smktibazma.sch.id/static/media/main-logo-2.7b74690f86ab4e9a4743.png" alt="logo" />
+              <img src="/logo.png" alt="logo" />
               <TabsLogo />
             </div>
           </BlurFade>
