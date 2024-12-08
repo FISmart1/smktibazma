@@ -65,9 +65,9 @@ export default function PPDB() {
             {[
               "Kartu Keluarga",
               "Pas foto berwarna terbaru",
-              "SKTM dari Masjid Setempat",
-              "Surat rekomendasi Wali Kelas/Guru SMP",
-              "Membuat Video Reels Instagram",
+              "SKTM dari Masjid Setempat*",
+              "Surat rekomendasi Wali Kelas/Guru SMP*",
+              "Membuat Video Reels Instagram**",
               "Foto berwarna rumah yang ditempati (tampak depan, samping, kamar tidur, ruang tamu, dapur, kamar mandi)",
               "Membuat essay/karangan bebas tentang “Peran saya sebagai pemuda di Era Digital” PPDB SMK TI BAZMA",
             ].map((document, idx) => (
