@@ -14,7 +14,7 @@ export default function PPDB() {
   const profileContent = (
     <div className="text-lg text-gray-500 text-justify">
       <h1 className="text-4xl text-blue-800 font-extrabold py-3">
-        Penerimaan Peserta Didik Baru (PPDB) TA 2025/2026   
+        Penerimaan Peserta Didik Baru (PPDB) TA 2025/2026
       </h1>
       <br />
       <p>
@@ -27,9 +27,9 @@ export default function PPDB() {
       <br />
       <h4 className="text-2xl text-gray-500 font-bold">Kompetensi Keahlian:</h4>
       <p>
-      <span className="font-bold">SIJA (Sistem Informatika, Jaringan & Aplikasi)</span>  dengan kombinasi
-          kurikulum berbasis asrama yang ditempuh selama 4 tahun (3 tahun
-          pembelajaran di sekolah dan 1 tahun Praktik kerja Lapang).
+        <span className="font-bold">SIJA (Sistem Informatika, Jaringan & Aplikasi)</span>  dengan kombinasi
+        kurikulum berbasis asrama yang ditempuh selama 4 tahun (3 tahun
+        pembelajaran di sekolah dan 1 tahun Praktik kerja Lapang).
       </p>
 
 
@@ -38,16 +38,16 @@ export default function PPDB() {
 
   const ppdbContent = (
     <div className="text-lg text-gray-500 text-justify">
-      <h1 className="text-4xl text-blue-800 font-extrabold py-3">
-        Pembukaan PPDB
+      <h1 className="text-4xl text-blue-800 font-extrabold mt-3">
+        Cara Mendaftar
       </h1>
-      <Accordion variant="splitted">
+      <Accordion variant="splitted" className="mt-6 gap-3">
         <AccordionItem key="1" title="Persyaratan Pendaftar">
-          <ul className="list-disc pl-5 space-y-2">
+          <ul className="list-disc px-8 mb-4 space-y-2 ">
             {[
               "Laki-laki Muslim dan mampu membaca Al-Qur'an dengan baik",
               "Berasal dari keluarga tidak mampu (dibuktikan dengan SKTM dari Masjid setempat)",
-              "Lulus jenjang SMP/MTs/Sederajat pada TP 2024 atau 2025",
+              "Lulus jenjang SMP/MTs/Sederajat pada TA 2024 atau 2025",
               "Usia maksimal 17 tahun pada tanggal 30 Juni 2025",
               "Sehat jasmani dan rohani (tidak buta warna, tidak merokok dan tidak mempunyai penyakit menular)",
               "Berkelakuan baik dan tidak memiliki riwayat kejahatan",
@@ -61,54 +61,61 @@ export default function PPDB() {
           </ul>
         </AccordionItem>
         <AccordionItem key="2" title="Dokumen Pendukung">
-          <ul className="list-disc pl-5 space-y-2">
-            {[
-              "Kartu Keluarga",
-              "Pas foto berwarna terbaru",
-              "SKTM dari Masjid Setempat*",
-              "Surat rekomendasi Wali Kelas/Guru SMP*",
-              "Membuat Video Reels Instagram**",
-              "Foto berwarna rumah yang ditempati (tampak depan, samping, kamar tidur, ruang tamu, dapur, kamar mandi)",
-              "Membuat essay/karangan bebas tentang “Peran saya sebagai pemuda di Era Digital” PPDB SMK TI BAZMA",
-            ].map((document, idx) => (
-              <li key={idx} className="hover:text-blue-500">
-                {document}
-              </li>
-            ))}
-          </ul>
+          <div className="mb-3 px-4 ">
+
+            <ul className="list-disc px-8 space-y-2">
+              {[
+                "Kartu Keluarga",
+                "Pas foto berwarna terbaru",
+                "SKTM dari Masjid Setempat*",
+                "Surat rekomendasi Wali Kelas/Guru SMP*",
+                "Membuat Video Reels Instagram**",
+                "Foto berwarna rumah yang ditempati (tampak depan, samping, kamar tidur, ruang tamu, dapur, kamar mandi)",
+                // "Membuat essay/karangan bebas tentang “Peran saya sebagai pemuda di Era Digital” PPDB SMK TI BAZMA",
+              ].map((document, idx) => (
+                <li key={idx} className="hover:text-blue-500">
+                  {document}
+                </li>
+              ))}
+            </ul>
+            <br />
+            <p>* Template surat rekomendasi dan SKTM dapat diunduh pada link :</p>
+            <a href="https://s.id/PPDBSMKTIBAZMA25-26" className="text-blue-500 hover:text-blue-600" target="_blank">https://s.id/PPDBSMKTIBAZMA25-26</a>
+          </div>
+
         </AccordionItem>
-        <AccordionItem key="3" title="Ketentuan Video" className="">
+        <AccordionItem key="3" title="Ketentuan Video">
           <div className="px-5">
 
-          <ul className="list-disc pl-5 space-y-2 px-4 ">
-            {[
-              "Follow akun resmi Instagram @smktibazma",
-              "Caption Reels : Saya sudah mendaftar PPDB SMK TI BAZMA! SMK Berasrama Bebas Biaya dengan jurusan SIJA (Sistem Informasi, Jaringan dan Aplikasi) Pendaftaran ditutup sampai 31 Januari 2025 daftar melalui : xxxx  @smktibazma #PPDBSMKTIBAZMA2025 #SMKTIBAZMA #BAZMA",
-              "Mention 3 temanmu dan @smktibazma ",
-            ].map((document, idx) => (
-              <li key={idx} className="hover:text-blue-500">
-                {document}
-              </li>
-            ))}
-          </ul>
-          <ul className="list-disc pl-5 space-y-2">
-            <h1 className="text-xl font-bold my-3">Isi Video:</h1>
-            {[
-              " Perkenalan diri, ceritakan tentang keunggulan dirimu dan hal bermanfaat dari keunggulan tersebut",
-              "Ceritakan motivasimu dan alasanmu mengikuti PPDB SMK TI BAZMA ",
-              "Ceritakan tentang tujuan hidup atau cita-citamu dan bagaimana bersekolah di SMK TI BAZMA dapat membantumu meraih hal tersebut",
-              "SMK TI BAZMA berdiri diatas nilai-nilai kebermanfaatan, sebutkan hal bermanfaat yang akan kamu ikhtiarkan jika nantinya diterima sebagai siswa SMK TI BAZMA",
-            ].map((document, idx) => (
-              <li key={idx} className="hover:text-blue-500">
-                {document}
-              </li>
-            ))}
-          </ul>
-          <br />
-          <p className="mb-4">
-            Pastikan video direkam ditempat yang rapi dan memiliki pencahayaan
-            yang baik, pastikan juga suaramu dapat terdengar dengan jelas
-          </p>
+            <ul className="list-disc pl-5 space-y-2 ">
+              {[
+                "Follow akun resmi Instagram @smktibazma",
+                "Caption Reels : Saya sudah mendaftar PPDB SMK TI BAZMA! SMK Berasrama Bebas Biaya dengan jurusan SIJA (Sistem Informasi, Jaringan dan Aplikasi) Pendaftaran ditutup sampai 31 Januari 2025 daftar melalui : xxxx  @smktibazma #PPDBSMKTIBAZMA2025 #SMKTIBAZMA #BAZMA",
+                "Mention 3 temanmu dan @smktibazma ",
+              ].map((document, idx) => (
+                <li key={idx} className="hover:text-blue-500">
+                  {document}
+                </li>
+              ))}
+            </ul>
+            <ul className="list-disc pl-5 space-y-2">
+              <h1 className="text-xl font-bold my-3">Isi Video:</h1>
+              {[
+                " Perkenalan diri, ceritakan tentang keunggulan dirimu dan hal bermanfaat dari keunggulan tersebut",
+                "Ceritakan motivasimu dan alasanmu mengikuti PPDB SMK TI BAZMA ",
+                "Ceritakan tentang tujuan hidup atau cita-citamu dan bagaimana bersekolah di SMK TI BAZMA dapat membantumu meraih hal tersebut",
+                "SMK TI BAZMA berdiri diatas nilai-nilai kebermanfaatan, sebutkan hal bermanfaat yang akan kamu ikhtiarkan jika nantinya diterima sebagai siswa SMK TI BAZMA",
+              ].map((document, idx) => (
+                <li key={idx} className="hover:text-blue-500">
+                  {document}
+                </li>
+              ))}
+            </ul>
+            <br />
+            <p className="mb-4">
+              Pastikan video direkam ditempat yang rapi dan memiliki pencahayaan
+              yang baik, pastikan juga suaramu dapat terdengar dengan jelas
+            </p>
           </div>
         </AccordionItem>
       </Accordion>
@@ -138,11 +145,12 @@ export default function PPDB() {
 
       <div className="container mx-auto px-4 max-w-5xl mb-10">
         <BlurFade delay={0.25 * 2} inView>
-          <div className="overflow-x-auto flex items-center justify-start scrollbar-width-none [-ms-overflow-style:'none'] [&::-webkit-scrollbar]:hidden">
+          <div className="overflow-x-auto flex items-center justify-start  scrollbar scrollbar-thumb-blue-700 scrollbar-track-gray-200">
             <StepperPpdb />
           </div>
         </BlurFade>
       </div>
+
 
       <div className="container mx-auto max-w-5xl my-10">
         <BlurFade delay={0.25 * 2} inView>

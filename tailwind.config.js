@@ -67,6 +67,7 @@ module.exports = {
       },
     },
   }),
+  require('tailwind-scrollbar'),
     //   require("tailwindcss-animate")
 ],
 }

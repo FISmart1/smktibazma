@@ -20,7 +20,7 @@ const formatDate = (date: string) => {
 const StepperPpdb: React.FC = () => {
   // Define the date ranges for each step
   const stepsDates = [
-    { title: "Pendaftaran Online", start: "2024-12-9", end: "2024-12-31" },
+    { title: "Pendaftaran Online", start: "2024-12-9", end: "2025-01-31" },
     {
       title: "Pengumuman Seleksi Administrasi",
       start: "2025-02-09",
