@@ -216,7 +216,9 @@ export default function Home() {
           <h1 className="text-4xl font-bold text-blue-800 mb-8 mt-4">Info PPDB</h1>
         </BlurFade>
         <BlurFade delay={0.25 * 3} inView>
-          <StepperPpdb />
+          <div className="overflow-x-auto flex items-center justify-start  scrollbar scrollbar-thumb-blue-700 scrollbar-track-gray-200">
+            <StepperPpdb />
+          </div>
         </BlurFade>
       </div>
 

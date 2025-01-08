@@ -27,6 +27,7 @@ import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-o
 import { IconSchool, IconUsers, IconHeadset, IconClipboardData, IconId, IconBrandInstagram } from "@tabler/icons-react";
 import React from "react";
 import { subtitle } from "./primitives";
+import { CoolMode } from "./magicui/cool-mode";
 
 const icons = {
   chevron: <ChevronDown fill="currentColor" size={16} />,
@@ -185,6 +186,7 @@ export const Navbar = () => {
             <ThemeSwitch />
           </NavbarItem> */}
           <NavbarItem className="hidden lg:flex">
+            <CoolMode>
             <Button
               isExternal
               target="_self"
@@ -195,6 +197,7 @@ export const Navbar = () => {
             >
               PPDB
             </Button>
+            </CoolMode>
           </NavbarItem>
 
 
