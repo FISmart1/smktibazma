@@ -129,7 +129,7 @@ export default function PPDB() {
             <ul className="list-disc pl-5 space-y-2 ">
               {[
                 "Follow akun resmi Instagram @smktibazma,",
-                "Caption Reels : Saya sudah mendaftar PPDB SMK TI BAZMA! SMK Berasrama Bebas Biaya dengan jurusan SIJA (Sistem Informasi, Jaringan dan Aplikasi) Pendaftaran ditutup sampai 31 Januari 2025 daftar melalui : smktibazma.sch.id/ppdb  @smktibazma #PPDBSMKTIBAZMA2025 #SMKTIBAZMA #BAZMA,",
+                "Caption Reels : Saya sudah mendaftar PPDB SMK TI BAZMA! SMK Berasrama Bebas Biaya dengan jurusan SIJA (Sistem Informasi, Jaringan dan Aplikasi) Pendaftaran ditutup sampai 31 Januari 2025 daftar melalui : https://smktibazma.sch.id/ppdb  @smktibazma #PPDBSMKTIBAZMA2025 #SMKTIBAZMA #BAZMA,",
                 "Mention 3 temanmu dan @smktibazma.",
               ].map((document, idx) => (
                 <li key={idx} className="hover:text-blue-500">
