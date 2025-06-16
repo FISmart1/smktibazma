@@ -6,8 +6,8 @@ import { Card, CardFooter, Divider, Image } from "@nextui-org/react";
 import BlurFade from "@/components/magicui/blur-fade";
 import Carousel from "@/components/carousel";
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
-import Timeline from "@/components/stepper";
-import StepperPpdb from "@/components/stepper";
+// import Timeline from "@/components/stepper";
+// import StepperPpdb from "@/components/stepper";
 import { subtitle } from "@/components/primitives";
 import ImageWithSkeleton from "@/components/image-skeleton";
 import { Link } from "@nextui-org/link";
@@ -212,15 +212,58 @@ export default function Home() {
       </div>
 
       <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
-        <BlurFade delay={0.25 * 2} inView>
-          <h1 className="text-4xl font-bold text-blue-800 mb-8 mt-4">Info PPDB</h1>
+        <BlurFade delay={0.5} inView>
+          <h1 className="text-4xl font-bold text-blue-800 mb-6 mt-4">
+            📢 Pengumuman Hasil Seleksi PPDB
+          </h1>
         </BlurFade>
-        <BlurFade delay={0.25 * 3} inView>
-          <div className="overflow-x-auto flex items-center justify-start  scrollbar scrollbar-thumb-blue-700 scrollbar-track-gray-200">
-            <StepperPpdb />
+
+        <BlurFade delay={0.75} inView>
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+            SMK TI BAZMA – Islamic Boarding School
+          </h2>
+          <p className="text-lg text-gray-700 mb-4">Tahun Ajaran 2025/2026</p>
+
+          <p className="text-gray-700 mb-4 leading-relaxed text-lg">
+            Assalamu’alaikum warahmatullahi wabarakatuh, <br />
+            Puji syukur ke hadirat Allah SWT, proses seleksi Penerimaan Peserta Didik Baru (PPDB) SMK TI BAZMA Tahun Ajaran 2025/2026 telah selesai dilaksanakan dengan lancar.
+          </p>
+
+          <p className="text-gray-700 mb-4 leading-relaxed text-lg">
+            Berdasarkan Surat Keputusan Kepala SMK TI BAZMA Nomor: <strong>80/S.Kpts/KS/SMK.TI.B/VI/2025</strong> tentang Penetapan Calon Peserta Didik SMK TI BAZMA Tahun Pelajaran 2025/2026, berikut kami sampaikan hasil seleksi resmi:
+          </p>
+
+          <div className="my-6">
+            <a
+              href="https://xmnfii4g0qkbiyno.public.blob.vercel-storage.com/smktibazma/Surat%20Keputusan%20PPDB%202025%20SMK%20TI%20Bazma-hXvnMGjYct3jT9143rQEYb6vnP3jGG.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition"
+            >
+              👉 Unduh Surat Pengumuman Kelulusan
+            </a>
           </div>
+
+          <p className="text-gray-700 mb-4 leading-relaxed text-lg">
+            Kami mengucapkan <strong>selamat</strong> kepada para peserta yang telah dinyatakan lulus seleksi, serta menyampaikan <strong>apresiasi setinggi-tingginya</strong> kepada seluruh peserta yang telah mengikuti proses seleksi ini dengan antusias dan semangat luar biasa.
+          </p>
+
+          <div className="bg-gray-100 rounded-lg p-4 mb-4 border border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">📌 Informasi Lanjutan:</h3>
+            <ul className="text-gray-700 space-y-1">
+              <li>📅 Jadwal daftar ulang dan kegiatan awal tahun ajaran akan disampaikan langsung oleh narahubung sekolah:</li>
+              <li>📱 Pak Mirza – <a href="tel:088802804685" className="text-blue-600 hover:underline">0888-0280-4685</a></li>
+              <li>📧 Email: <a href="mailto:smktibazma@gmail.com" className="text-blue-600 hover:underline">smktibazma@gmail.com</a></li>
+            </ul>
+          </div>
+
+          <p className="text-gray-700 leading-relaxed text-lg">
+            Terima kasih atas kepercayaan Anda kepada SMK TI BAZMA. <br />
+            Wassalamu’alaikum warahmatullahi wabarakatuh.
+          </p>
         </BlurFade>
       </div>
+
 
       <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
         <BlurFade delay={0.25 * 2} inView>
