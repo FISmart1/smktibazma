@@ -211,74 +211,7 @@ export default function Home() {
         </BlurFade>
       </div>
 
-      <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
-        <BlurFade delay={0.5} inView>
-          <h1 className="text-4xl font-bold text-blue-800 mb-6 mt-4">
-            📢 Pengumuman Hasil Seleksi PPDB
-          </h1>
-        </BlurFade>
 
-        <BlurFade delay={0.75} inView>
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-            SMK TI BAZMA – Islamic Boarding School
-          </h2>
-          <p className="text-lg text-gray-700 mb-4">Tahun Ajaran 2025/2026</p>
-
-          <p className="text-gray-700 mb-4 leading-relaxed text-lg">
-            Assalamu’alaikum warahmatullahi wabarakatuh, <br />
-            Puji syukur ke hadirat Allah SWT, proses seleksi Penerimaan Peserta Didik Baru (PPDB) SMK TI BAZMA Tahun Ajaran 2025/2026 telah selesai dilaksanakan dengan lancar.
-          </p>
-
-          <p className="text-gray-700 mb-4 leading-relaxed text-lg">
-            Berdasarkan Surat Keputusan Kepala SMK TI BAZMA Nomor: <strong>80/S.Kpts/KS/SMK.TI.B/VI/2025</strong> tentang Penetapan Calon Peserta Didik SMK TI BAZMA Tahun Pelajaran 2025/2026, berikut kami sampaikan hasil seleksi resmi:
-          </p>
-
-          <div className="my-6">
-            <a
-              href="https://xmnfii4g0qkbiyno.public.blob.vercel-storage.com/smktibazma/Surat%20Keputusan%20PPDB%202025%20SMK%20TI%20Bazma-hXvnMGjYct3jT9143rQEYb6vnP3jGG.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition"
-            >
-              👉 Unduh Surat Pengumuman Kelulusan
-            </a>
-          </div>
-
-          <p className="text-gray-700 mb-4 leading-relaxed text-lg">
-            Kami mengucapkan <strong>selamat</strong> kepada para peserta yang telah dinyatakan lulus seleksi, serta menyampaikan <strong>apresiasi setinggi-tingginya</strong> kepada seluruh peserta yang telah mengikuti proses seleksi ini dengan antusias dan semangat luar biasa.
-          </p>
-
-          <div className="bg-gray-100 rounded-lg p-4 mb-4 border border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">📌 Informasi Lanjutan:</h3>
-            <ul className="text-gray-700 space-y-1">
-              <li>📅 Jadwal daftar ulang dan kegiatan awal tahun ajaran akan disampaikan langsung oleh narahubung sekolah:</li>
-              <li>📱 Pak Mirza – <a href="tel:088802804685" className="text-blue-600 hover:underline">0888-0280-4685</a></li>
-              <li>📧 Email: <a href="mailto:smktibazma@gmail.com" className="text-blue-600 hover:underline">smktibazma@gmail.com</a></li>
-            </ul>
-          </div>
-
-          <p className="text-gray-700 leading-relaxed text-lg">
-            Terima kasih atas kepercayaan Anda kepada SMK TI BAZMA. <br />
-            Wassalamu’alaikum warahmatullahi wabarakatuh.
-          </p>
-        </BlurFade>
-      </div>
-
-
-      <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
-        <BlurFade delay={0.25 * 2} inView>
-          <div className="mx-auto max-w-2xl py-35 sm:py-50 text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-6xl">Daftarkan Dirimu Sekarang!</h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">Daftar Sebelum 31 Januari 2025, Pendaftar yang mengalami kesulitan atau keterbatasan dalam mengakses formulir online dapat menghubungi Kami.</p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a target="_self" rel="noreferrer" href="/ppdb" className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500">Daftar sekarang &rarr;</a>
-            </div>
-          </div>
-          <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl">
-            <div className="relative left-[calc(50%+3rem)] w-[36rem] -translate-x-1/2 bg-gradient-to-tr from-pink-300 to-indigo-300 opacity-30 sm:w-[72rem]"></div>
-          </div>
-        </BlurFade>
-      </div>
 
       <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
         <BlurFade delay={0.25 * 2} inView>
