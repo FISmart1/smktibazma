@@ -5,35 +5,20 @@ export const siteConfig = {
   description: "Make beautiful websites regardless of your design experience.",
   navItems: [
     {
-      label: "Donasi",
+      label: "Berita",
       href: "/donation",
-    },
-    {
-      label: "Team Dev",
-      href: "/team-development",
-    },
-    {
-      label: "Progres Siswa",
-      href: "https://sismako.smktibazma.sch.id/smktibazma.sch.id",
-    },
+    }
   ],
   navMenuItems: [
     {
-      label: "Donasi",
+      label: "Berita",
       href: "/donation",
-    },
-    {
-      label: "Team Dev",
-      href: "/team-development",
-    },
-    {
-      label: "Progres Siswa",
-      href: "https://sismako.smktibazma.sch.id/smktibazma.sch.id",
     },
     {
       label: "PPDB",
       href: "/ppdb",
     },
+
   ],
   links: {
     github: "https://github.com/nextui-org/nextui",

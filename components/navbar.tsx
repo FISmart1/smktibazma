@@ -25,7 +25,7 @@ import {
 import { Button } from "@nextui-org/button";
 import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
 import { IconSchool, IconUsers, IconHeadset, IconClipboardData, IconId, IconBrandInstagram } from "@tabler/icons-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { subtitle } from "./primitives";
 import { CoolMode } from "./magicui/cool-mode";
 
@@ -38,6 +38,15 @@ const icons = {
   saas: <IconId className="text-primary" stroke={2} size={30} />,
 }
 export const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const searchInput = (
     <Input
@@ -61,12 +70,21 @@ export const Navbar = () => {
   );
 
   return (
-    <NextUINavbar maxWidth="xl" position="sticky">
+    <NextUINavbar
+      maxWidth="xl"
+      position="sticky"
+      className={clsx(
+        "backdrop-blur-md transition-colors duration-300",
+        isScrolled ? "bg-white shadow-md text-black" : "bg-white/10 text-white"
+      )}
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             <Logo />
-            <p className={subtitle({ class: 'text-bold text-xl' })}>SMK TI BAZMA</p>
+            <p className={subtitle({ class: clsx("text-bold text-xl", isScrolled ? "text-black" : "text-white") })}>
+              SMK TI BAZMA
+            </p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
@@ -75,20 +93,37 @@ export const Navbar = () => {
         justify="end"
       >
         <ul className="hidden lg:flex gap-5 items-center ml-2">
+          <NavbarItem className="hidden lg:flex">
+            <CoolMode>
+              <Button
+                isExternal
+                target="_self"
+                as={Link}
+                className={clsx(
+                  "text-sm font-semibold p-0 bg-transparent data-[hover=true]:bg-transparent text-md",
+                  isScrolled ? "text-black" : "text-white"
+                )}
+                href='/beranda'
+                variant="flat"
+              >
+                Beranda
+              </Button>
+            </CoolMode>
+          </NavbarItem>
           <Dropdown>
             <NavbarItem>
               <DropdownTrigger>
                 <Button
                   disableRipple
-                  className="p-0 bg-transparent data-[hover=true]:bg-transparent text-md"
+                  className={clsx(
+                    "p-0 bg-transparent data-[hover=true]:bg-transparent text-md font-semibold",
+                    isScrolled ? "text-black" : "text-white"
+                  )}
                   endContent={icons.chevron}
                   radius="sm"
                   variant="light"
                 >
-                  <h1 className="font-semibold">
-
-                    Tentang Kami
-                  </h1>
+                  Profil
                 </Button>
               </DropdownTrigger>
             </NavbarItem>
@@ -100,7 +135,6 @@ export const Navbar = () => {
               }}
             >
               <DropdownItem
-
                 description="Informasi tentang SMK TI BAZMA"
                 href="/about"
                 startContent={icons.profile}
@@ -111,34 +145,42 @@ export const Navbar = () => {
                 key="usage_metrics"
                 href="/partner"
                 description="Informasi tentang Mitra SMK TI BAZMA"
-
                 startContent={icons.partners}
               >
-                Mitra Kami
-              </DropdownItem>
-              <DropdownItem
-                description="Layanan, Masukan & Saran"
-                href="/service"
-                startContent={icons.service}
-              >
-                Layanan & Masukan
+                Profil Asrama
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
+          
+          {siteConfig.navItems.map((item) => (
+            <NavbarItem key={item.href}>
+              <NextLink
+                className={clsx(
+                  linkStyles({ color: "foreground" }),
+                  "data-[active=true]:text-primary data-[active=true]:font-bold font-semibold",
+                  isScrolled ? "text-black" : "text-white"
+                )}
+                color="foreground"
+                href={item.href}
+              >
+                {item.label}
+              </NextLink>
+            </NavbarItem>
+          ))}
           <Dropdown>
             <NavbarItem>
               <DropdownTrigger>
                 <Button
                   disableRipple
-                  className="p-0 bg-transparent data-[hover=true]:bg-transparent text-md"
+                  className={clsx(
+                    "p-0 bg-transparent data-[hover=true]:bg-transparent text-md font-semibold",
+                    isScrolled ? "text-black" : "text-white"
+                  )}
                   endContent={icons.chevron}
                   radius="sm"
                   variant="light"
                 >
-                  <h1 className="font-semibold">
-
-                    Portofolio
-                  </h1>
+                  Portofolio
                 </Button>
               </DropdownTrigger>
             </NavbarItem>
@@ -150,82 +192,40 @@ export const Navbar = () => {
               }}
             >
               <DropdownItem
-
                 description="Sistem Manajemen Sekolah"
-                href="https://sismako.smktibazma.sch.id/"
+                href="https://best.smktibazma.com"
                 startContent={icons.sismako}
               >
-                SISMAKO
+                Catalog Talent
               </DropdownItem>
               <DropdownItem
                 key="usage_metrics"
-                href="/404"
+                href="https://smartpkl.smktibazma.com"
                 description="Sistem Absensi Sekolah"
-
                 startContent={icons.saas}
               >
-                SAAS
+                Smart PKL
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-bold font-semibold",
-                )}
-                color="foreground"
-                href={item.href}
-              >
-                {item.label}
-              </NextLink>
-            </NavbarItem>
-          ))}
-          {/* <NavbarItem className="hidden lg:flex">
-            <ThemeSwitch />
-          </NavbarItem> */}
           <NavbarItem className="hidden lg:flex">
             <CoolMode>
-            <Button
-              isExternal
-              target="_self"
-              as={Link}
-              className="text-sm font-semibold bg-blue-600 text-white"
-              href='/ppdb'
-              variant="flat"
-            >
-              PPDB
-            </Button>
+              <Button
+                isExternal
+                target="_self"
+                as={Link}
+                className={clsx(
+                  "text-sm font-semibold p-0 bg-transparent data-[hover=true]:bg-transparent text-md",
+                  isScrolled ? "text-black" : "text-white"
+                )}
+                href='/ppdb'
+                variant="flat"
+              >
+                PPDB
+              </Button>
             </CoolMode>
           </NavbarItem>
-
-
         </ul>
-        {/* <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
-          </Link>
-        </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-        <NavbarItem className="hidden md:flex">
-          <Button
-            isExternal
-            as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.sponsor}
-            startContent={<HeartFilledIcon className="text-danger" />}
-            variant="flat"
-          >
-            Sponsor
-          </Button>
-        </NavbarItem> */}
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
@@ -234,11 +234,11 @@ export const Navbar = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <IconBrandInstagram color="black" />
+          <IconBrandInstagram color={isScrolled ? "black" : "white"} />
         </Link>
         <NavbarItem className="hidden lg:flex">
-            <ThemeSwitch />
-          </NavbarItem>
+          <ThemeSwitch />
+        </NavbarItem>
         <NavbarMenuToggle />
       </NavbarContent>
 
@@ -256,8 +256,7 @@ export const Navbar = () => {
                   variant="light"
                 >
                   <h1 className="font-semibold">
-
-                    Tentang Kami
+                    Profil
                   </h1>
                 </Button>
               </DropdownTrigger>
@@ -270,7 +269,6 @@ export const Navbar = () => {
               }}
             >
               <DropdownItem
-
                 description="Informasi tentang SMK TI BAZMA"
                 href="/about"
                 startContent={icons.profile}
@@ -281,17 +279,9 @@ export const Navbar = () => {
                 key="usage_metrics"
                 href="/partner"
                 description="Informasi tentang Mitra SMK TI BAZMA"
-
                 startContent={icons.partners}
               >
-                Mitra Kami
-              </DropdownItem>
-              <DropdownItem
-                description="Layanan, Masukan & Saran"
-                href="/service"
-                startContent={icons.service}
-              >
-                Layanan & Masukan
+                Profil Asrama
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>
@@ -306,7 +296,6 @@ export const Navbar = () => {
                   variant="light"
                 >
                   <h1 className="font-semibold">
-
                     Portofolio
                   </h1>
                 </Button>
@@ -320,21 +309,19 @@ export const Navbar = () => {
               }}
             >
               <DropdownItem
-
                 description="Sistem Manajemen Sekolah"
                 href="https://sismako.smktibazma.sch.id/"
                 startContent={icons.sismako}
               >
-                SISMAKO
+                Catalog Talent
               </DropdownItem>
               <DropdownItem
                 key="usage_metrics"
                 description="Sistem Absensi Sekolah"
                 startContent={icons.saas}
                 href="/404"
-                // onClick={handleNotFound}
-                >
-                SAAS
+              >
+                Smart PKL
               </DropdownItem>
             </DropdownMenu>
           </Dropdown>

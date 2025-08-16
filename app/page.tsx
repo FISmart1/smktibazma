@@ -16,7 +16,7 @@ export default function Home() {
   const slidesData = [
     {
       img: "carousel/main/guru.webp",
-      heading: "Energi Masa Depan Indonesia",
+      heading: "ISLAMIC BOARDING SCHOOL",
       desc: 'Selamat datang di SMK TI BAZMA, pusat pengembangan pendidikan yang berfokus pada pengembangan keterampilan teknologi informasi yang unggul dan berdaya saing. Kami berkomitmen untuk menciptakan generasi yang siap menghadapi tantangan dunia digital melalui pendidikan berkualitas, fasilitas lengkap, dan kurikulum berbasis teknologi terkini.'
 
     },
