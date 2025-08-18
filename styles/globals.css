@@ -6,3 +6,20 @@
     --radius: 0.5rem
   }
 }
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-horizontal {
+  animation: scroll-horizontal 10s linear infinite;
+}
+
+
+.bg-blue {
+  background-color: #005BD3;
+}

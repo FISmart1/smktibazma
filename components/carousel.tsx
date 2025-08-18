@@ -121,10 +121,10 @@ export default function Carousel({ slides }: CarouselProps) {
       {/* Tulisan tetap di tengah, tidak ikut loop */}
       <div className="absolute inset-0 flex items-center justify-center text-center z-10 px-4">
         <div className="text-white">
-          <h3 className="text-md md:text-xl font-semibold tracking-wide">
+          <h3 className="text-md md:text-2xl font-semibold tracking-wide">
             ISLAMIC BOARDING SCHOOL
           </h3>
-          <h1 className="text-3xl md:text-6xl font-black mt-2">
+          <h1 className="text-3xl md:text-7xl font-black mt-2">
             SMK TI BAZMA
           </h1>
           <p className="text-md md:text-xl mt-4">

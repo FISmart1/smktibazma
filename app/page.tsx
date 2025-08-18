@@ -6,44 +6,76 @@ import { Card, CardFooter, Divider, Image } from "@nextui-org/react";
 import BlurFade from "@/components/magicui/blur-fade";
 import Carousel from "@/components/carousel";
 import { NeonGradientCard } from "@/components/ui/neon-gradient-card";
-// import Timeline from "@/components/stepper";
-// import StepperPpdb from "@/components/stepper";
 import { subtitle } from "@/components/primitives";
 import ImageWithSkeleton from "@/components/image-skeleton";
 import { Link } from "@nextui-org/link";
+import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
+  const cards = [
+    {
+      id: "siot",
+      title: "SIoT",
+      subtitle: "Sistem Internet of Things",
+      desc: "Teknologi yang menghubungkan perangkat ke internet untuk bertukar data, otomatisasi, dan kontrol jarak jauh.",
+      img: "/img/siot.jpg",
+    },
+    {
+      id: "pkk",
+      title: "PKK",
+      subtitle: "Praktek Kreatif dan Kewirausahaan",
+      desc: "Membekali siswa dengan keterampilan berwirausaha melalui praktik nyata, inovasi produk, dan manajemen bisnis.",
+      img: "/img/pkk.jpg",
+    },
+    {
+      id: "cloud",
+      title: "Cloud Computing",
+      subtitle: "Teknologi Awan",
+      desc: "Pembelajaran teknologi cloud computing terbaru untuk mendukung layanan berbasis internet yang efisien dan scalable.",
+      img: "/img/cloud.jpg",
+    },
+    {
+      id: "skj",
+      title: "SKJ",
+      subtitle: "Sistem Komputer & Jaringan",
+      desc: "Fokus pada pengelolaan jaringan komputer, keamanan, dan implementasi infrastruktur IT modern.",
+      img: "/img/skj.jpg",
+    },
+  ];
+
+  const [activeCard, setActiveCard] = useState(cards[0]);
+
+
   const slidesData = [
     {
       img: "carousel/main/guru.webp",
       heading: "ISLAMIC BOARDING SCHOOL",
-      desc: 'Selamat datang di SMK TI BAZMA, pusat pengembangan pendidikan yang berfokus pada pengembangan keterampilan teknologi informasi yang unggul dan berdaya saing. Kami berkomitmen untuk menciptakan generasi yang siap menghadapi tantangan dunia digital melalui pendidikan berkualitas, fasilitas lengkap, dan kurikulum berbasis teknologi terkini.'
-
+      desc: "Selamat datang di SMK TI BAZMA, pusat pengembangan pendidikan ...",
     },
     {
       img: "carousel/main/tasmi.webp",
       heading: `JAGO IT, PINTER NGAJI`,
-      desc: "SMK TI BAZMA merupakan sekolah yang berfokus dalam pengembangan bidang Teknologi IT serta diimbangi juga dengan pembelajar dalam bidang ilmu agama seperti seperti Fiqih, akhlak, Tajwid dan Tafsir serta kaderisasi iman dan khotib. Selain itu, diwajibkan juga untuk para peserta didik menghafal Al Qur'an dan menyetorkan kepada mudabir yakni juz 28, 29 dan 30 secara mutqin."
+      desc: "SMK TI BAZMA merupakan sekolah ...",
     },
     {
       img: "carousel/main/silat.webp",
       heading: "Ekstrakurikuler Pencak Silat",
-      desc: 'Pencak Silat adalah seni bela diri tradisional Indonesia yang mengajarkan keterampilan bertarung, disiplin, dan nilai-nilai budaya. Siswa kami dapat mengikuti ekstrakurikuler Pencak Silat untuk mengembangkan fisik, mental, dan karakter melalui latihan yang seimbang dan bermakna.'
+      desc: "Pencak Silat adalah seni bela diri ...",
     },
     {
-      img: "carousel/main/IoT.webp",
+      img: "carousel/main/robotik.webp",
       heading: "Ekstrakurikuler Robotik",
-      desc: 'Ekstrakurikuler Robotik merupakan salah satu eskul pengembangan keterampilan teknik dan pemrograman siswa melalui berbagai proyek inovatif. Program kerja kami mencakup pelatihan dasar tentang perangkat keras dan perangkat lunak robotik, kompetisi robot tingkat lokal dan nasional, serta workshop kolaboratif dengan industri teknologi. '
+      desc: "Ekstrakurikuler Robotik merupakan salah satu eskul ...",
     },
     {
       img: "carousel/main/pramuka.webp",
       heading: "Ekstrakurikuler Pramuka",
-      desc: 'Ekstrakulikuler Pramuka merupakan eskul wajib di SMK TI BAZMA karena merupakan pondasi awal pengembangan kepemimpinan dan kedisiplinan serta rasa cinta dan rasa tanggung jawab terhadap amanah, masyarakat dan alam serta belajar tentang keberlanjutan dan pelestarian lingkungan, baik di sekolah maupun di masyarakat '
+      desc: "Ekstrakulikuler Pramuka merupakan eskul wajib ...",
     },
     {
-      img: "carousel/main/futsal.webp",
+      img: "carousel/main/perpustakaan.webp",
       heading: "Ekstrakurikuler Futsal",
-      desc: 'Futsal sebagai Ekstrakulikuler olahraga yang merupakan kegiatan permainan kebugaran  untuk melatih kekompakan akan sebuah tim serta mendorong para pemain untuk melatih teknik dalam mengambil keputusan cepat dan tepat agar efektif'
+      desc: "Futsal sebagai Ekstrakulikuler olahraga ...",
     },
   ];
 
@@ -51,158 +83,182 @@ export default function Home() {
     <section className="flex flex-col items-center justify-center gap-4 ">
       <Carousel slides={slidesData} />
       <BlurFade delay={0.25 * 2} inView>
-        <div className="container mx-auto my-[75px] px-4 max-w-6xl ">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex flex-col justify-between h-full">
-              <h1 className="text-4xl font-bold text-blue-800">
+        <div className="container mx-auto my-[75px] px-4 max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            {/* Text Section */}
+            <div className="max-w-[600px] text-lg text-gray-600 text-justify">
+              <h1 className="text-4xl font-bold text-blue-800 mb-4">
                 Profil Sekolah
               </h1>
+              <p className="leading-relaxed">
+                Sekolah Menengah Kejuruan Teknologi Informasi Bazma (SMK TI
+                BAZMA) merupakan sekolah unggulan berasrama yang bebas biaya dan
+                diperuntukan untuk anak-anak tidak mampu. Pembangunan sekolah,
+                baik fasilitas maupun operasional didanai dari hasil pengelolaan
+                wakaf dan sumber dana sosial kemanusiaan lainnya yang
+                diamanahkan oleh masyarakat.
+              </p>
+              <br />
               <Button
                 color="primary"
-                className="max-w-40 bg-blue-800 hidden md:block "
+                className="max-w-40 bg-blue hidden md:block rounded-sm"
               >
-                <Link href="/about" className="text-white  " >Selengkapnya</Link>
+                <Link href="/about" className="text-white  ">
+                  Profil Sekolah
+                </Link>
               </Button>
             </div>
 
-            <div className="max-w-[600px] text-lg text-gray-500 text-justify">
-              <p className={subtitle()}>
-                Sekolah Menengah Kejuruan Teknologi Informasi Bazma (SMK TI
-                BAZMA) merupakan sekolah unggulan berasrama yang bebas biaya dan diperuntukan untuk
-                anak-anak tidak mampu. Pembangunan sekolah, baik fasilitas
-                maupun operasional didanai dari hasil pengelolaan wakaf dan
-                sumber dana sosial kemanusiaan lainnya yang diamanahkan oleh
-                masyarakat.
-              </p>
-              <br />
-              <p className={subtitle()}>
-                SMK TI BAZMA menyelenggarakan program pembelajaran yang ditempuh
-                selama 4 tahun dengan siswa-siswa terbaik yang berasal dari berbagai
-                daerah di seluruh Indonesia. SMK TI Bazma menyelenggarakan
-                pendidikan dengan jurusan SIJA (Sistem Informatika, Jaringan &
-                Aplikasi) dengan kombinasi kurikulum berbasis asrama.
-              </p>
+            {/* Image Section */}
+            <div className="flex justify-center">
+              <img
+                src="img/akreditasi.png"
+                alt="Akreditasi SMK TI Bazma"
+                className="w-full max-w-[300px] h-auto"
+              />
             </div>
           </div>
         </div>
       </BlurFade>
 
-      <section
-        className="w-full text-white py-[75px] bg-blue-800 my-[75px]"
-
-      >
+      <section className="w-full text-white py-[75px] bg-blue my-[10px]">
         <div className="container mx-auto px-4 max-w-6xl ">
           <BlurFade delay={0.25 * 2} inView>
             <div className="flex flex-col-reverse lg:flex-row items-center  justify-between">
-              <div className=" grid mb-4 lg:mb-0 max-w-[625px] gap-5">
-                <h1 className="text-4xl font-bold mb-2 mt-2 text-center lg:text-start">
-                  Sambutan Kepala Sekolah
-                </h1>
-                <p className="mt-2 font-regular text-lg text-justify">
-                  SMK TI BAZMA merupakan sekolah yang  merepresentasikan dari sebuah realita kehidupan pendidikan era milenial sekarang ini.  Dimana perpaduan antara teknologi IT kekinian yang dilandasi dengan nilai  keagamaan serta Tahfidzul Qur'an dalam bingkai Islamic boarding school.
-                  <br /> <br />
-                  Sekolah yang memiliki masa pendidikan 4 tahun ini terlahir dari badan Filantropi kemanusiaan dengan full beasiswa untuk peserta didik dhuafa dengan pendanaan hasil Zakat, infak, shadaqoh dan wakaf dari Yayasan BAZMA.
-                  <br /><br />
-                  Semoga SMK TI BAZMA selalu Istiqomah menebar manfaat dan menjadi jawaban atas doa serta harapan bagi para energi masa depan Indonesia sehingga kedepannya bisa merubah Mustahik menjadi Muzaki sebagai generasi penerus perjuangan bangsa.
-                </p>
-                <h1 className="text-3xl font-semibold mt-3 text-center lg:text-start">
+              <div className="flex flex-col text-center">
+                <NeonGradientCard className="border-none max-w-[275px] object-fit">
+                  <Card isFooterBlurred radius="lg" className="p-0">
+                    <ImageWithSkeleton
+                      src="./pak_dahlan.webp"
+                      alt="Foto Pak dahlan"
+                      size={340}
+                    />
+                  </Card>
+                </NeonGradientCard>
+                <h1 className="text-xl font-semibold mt-3 text-center lg:text-start">
                   - Ahmad Dahlan, S.Ag.
                 </h1>
               </div>
-              <NeonGradientCard className="border-none max-w-[275px] object-fit">
-                <Card
-                  isFooterBlurred
-                  radius="lg"
-                  className="p-0"
-                >
-                  <ImageWithSkeleton
-                    src="./pak_dahlan.webp"
-                    alt="Foto Pak dahlan"
-                    size={340}
-                  />
-                </Card>
-              </NeonGradientCard>
+
+              <div className=" grid mb-4 lg:mb-0 max-w-[750px] gap-4">
+                <h1 className="text-4xl font-bold mb-2 mt-2 text-center lg:text-start">
+                  PENGANTAR KEPALA SEKOLAH
+                </h1>
+                <p className="mt-2 font-normal text-lg text-justify">
+                  SMK TI BAZMA merupakan sekolah yang merepresentasikan dari
+                  sebuah realita kehidupan pendidikan era milenial sekarang ini.
+                  Dimana perpaduan antara teknologi IT kekinian yang dilandasi
+                  dengan nilai keagamaan serta Tahfidzul Qur'an dalam bingkai
+                  Islamic boarding school.
+                  <br /> <br />
+                  Sekolah yang memiliki masa pendidikan 4 tahun ini terlahir
+                  dari badan Filantropi kemanusiaan dengan full beasiswa untuk
+                  peserta didik dhuafa dengan pendanaan hasil Zakat, infak,
+                  shadaqoh dan wakaf dari Yayasan BAZMA.
+                  <br />
+                  <br />
+                  Semoga SMK TI BAZMA selalu Istiqomah menebar manfaat dan
+                  menjadi jawaban atas doa serta harapan bagi para energi masa
+                  depan Indonesia sehingga kedepannya bisa merubah Mustahik
+                  menjadi Muzaki sebagai generasi penerus perjuangan bangsa.
+                </p>
+              </div>
             </div>
           </BlurFade>
         </div>
-        <hr className="border-b-large border-b-white mt-[50px]" />
       </section>
 
-
-      <section className="container mx-auto px-4 max-w-6xl ">
+      <section className="container mx-auto max-w-6xl ">
         <BlurFade delay={0.25 * 2} inView>
-          <h1 className="text-4xl lg:text-6xl font-black text-blue-800 text-center uppercase mb-12">
-            Sistem, Informatika, Jaringan, & Aplikasi (SIJA)
+          <h1 className="text-4xl lg:text-4xl font-black text-blue-800 text-center uppercase mb-5">
+            VISI
           </h1>
+          <p className="text-lg text-white font-medium text-center mb-8 bg-blue p-5 rounded-sm">
+            Menjadi sekolah yang melahirkan generasi berkarakter unggul,
+            berkepribadian Islami, mandiri, berprestasi dan menebar manfaat.
+          </p>
         </BlurFade>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="items-center">
           {/* Bagian Teks */}
           <BlurFade delay={0.25 * 3} inView>
-
-            <div className="space-y-6">
-              <p className={subtitle()}>
-                SIJA adalah perpaduan inovatif antara Teknik Komputer & Jaringan (TKJ) dan Rekayasa Perangkat Lunak (RPL). Sekolah kami dilengkapi dengan teknologi terbaru dalam bidang <span className="font-bold">cloud computing</span> untuk mempersiapkan siswa menghadapi tantangan masa depan.
-              </p>
-              <div className="text-xl leading-8 text-gray-700">
-                <p className={"font-bold"}>Kompetensi Keahlian:</p>
-                <ul className="list-disc pl-6">
-                  <li className="mt-2"><span className="font-bold capitalize">Cloud computing</span> <span className="font-bold text-blue-800">(IaaS, PaaS, SaaS)</span></li>
-                  <li className="mt-2"><span className="font-bold capitalize">Sistem internet of things</span> <span className="font-bold text-blue-800">(SIoT)</span></li>
-                  <li className="mt-2"><span className="font-bold capitalize">Sistem keamanan jaringan</span> <span className="font-bold text-blue-800">(SKJ)</span></li>
-                  <li className="mt-2"><span className="font-bold capitalize">Produk kreatif dan kewirausahaan</span> <span className="font-bold text-blue-800">(PKK)</span></li>
-                </ul>
-              </div>
-            </div>
-          </BlurFade>
-          {/* Bagian Gambar */}
-          <BlurFade delay={0.25 * 3} inView>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:justify-end">
-              {/* Card Gambar 1 */}
-              <div className="relative group w-64 h-80 bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-                <Card isFooterBlurred className="w-full h-[320px] col-span-12 sm:col-span-5">
-                  <ImageWithSkeleton
-                    src="/img/Mufiz.webp"
-                    alt="Student Working on Computer"
-                    size={340}
-                  />
-                  <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-                    <div>
-                      <p className="text-white text-bold text-tiny">Web Programming</p>
-                    </div>
-                  </CardFooter>
-                </Card>
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
-                <div className="absolute bottom-4 left-4 text-white text-lg font-semibold">Web Programming</div>
+            <h1 className="text-2xl lg:text-4xl font-black text-blue-800 text-center uppercase mb-5">
+              MISI
+            </h1>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="flex items-center justify-center text-lg font-medium text-center bg-white p-6 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.15)]">
+                Menyelenggarakan Sekolah Menengah Kejuruan (SMK) yang
+                berkualitas
               </div>
 
-              {/* Card Gambar 2 */}
-              <div className="relative group w-64 h-80 bg-white rounded-xl shadow-lg overflow-hidden transition-transform transform hover:scale-105">
-                <Card isFooterBlurred className="w-full h-[320px] col-span-12 sm:col-span-5">
-                  <ImageWithSkeleton
-                    src="/img/rakit.webp"
-                    alt="Students Building Hardware"
-                    size={340}
-                  />
-                  <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-                    <div>
-                      <p className="text-white text-bold text-tiny">Komputer & Jaringan</p>
-                    </div>
-                  </CardFooter>
-                </Card>
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-70 group-hover:opacity-50 transition-opacity"></div>
-                <div className="absolute bottom-4 left-4 text-white text-lg font-semibold">Komputer & Jaringan</div>
+              <div className="flex items-center justify-center text-lg font-medium text-center bg-white p-6 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.15)]">
+                Melahirkan lulusan yang berkarakter unggul siap kerja
+              </div>
+
+              <div className="flex items-center justify-center text-lg font-medium text-center bg-white p-6 rounded-lg shadow-[0_0_20px_rgba(0,0,0,0.15)]">
+                Mewujudkan generasi SDM yang berdaya saing global
               </div>
             </div>
           </BlurFade>
         </div>
       </section>
+      <section className="bg-blue-700 text-white py-12 px-6 rounded-2xl max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Left Side: Text & Cards */}
+          <div>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">
+              Sistem, Informatika, Jaringan, & Aplikasi (SIJA)
+            </h1>
+            <p className="text-base md:text-lg mb-6 text-gray-100">
+              SIJA adalah perpaduan inovatif antara TKJ dan RPL yang mendukung
+              pembelajaran berbasis teknologi terbaru...
+            </p>
 
+            {/* Deskripsi Aktif */}
+            <div className="bg-white text-black p-5 rounded-xl shadow-lg mb-6">
+              <h2 className="text-lg font-semibold">{activeCard.subtitle}</h2>
+              <p className="text-sm mt-2 leading-relaxed">{activeCard.desc}</p>
+            </div>
 
-      <div className="container mx-auto max-w-6xl mb-[75px] mt-8 p-4">
+            {/* Auto Scroll Cards (Horizontal) */}
+            <div className="relative w-full overflow-hidden">
+              <div className="flex gap-4 animate-scroll-horizontal">
+                {cards.concat(cards).map((card, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveCard(card)}
+                    className={`min-w-[200px] p-4 rounded-xl border text-left transition shadow-sm ${
+                      activeCard.id === card.id
+                        ? "bg-blue-600 text-white border-blue-400"
+                        : "bg-gray-100 text-black border-gray-300 hover:bg-gray-200"
+                    }`}
+                  >
+                    <h3 className="font-bold text-base">{card.title}</h3>
+                    <p className="text-sm">{card.subtitle}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side: Active Card Image & Detail */}
+          <div className="flex flex-col items-center text-center">
+            <img
+              src={activeCard.image}
+              alt={activeCard.title}
+              className="w-full h-64 object-cover rounded-2xl shadow-lg mb-6"
+            />
+            <h2 className="text-2xl font-bold mb-2">{activeCard.title}</h2>
+            
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto rounded-lg max-w-6xl mb-[75px] mt-8 p-10 bg-white shadow-[0_0_20px_rgba(0,0,0,0.15)]">
         <BlurFade delay={0.25 * 3} inView>
-          <h1 className="text-4xl font-bold text-blue-800 mb-8 ">Mengapa Sekolah di SMK TI BAZMA?</h1>
+          <h1 className="text-4xl font-bold text-blue-800 mb-8 ">
+            Mengapa Sekolah di SMK TI BAZMA?
+          </h1>
         </BlurFade>
         <BlurFade delay={0.25 * 3} inView>
           <div className="grid lg:flex items-center">
@@ -211,12 +267,11 @@ export default function Home() {
         </BlurFade>
       </div>
 
-
-
       <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
         <BlurFade delay={0.25 * 2} inView>
-
-          <h1 className="text-4xl font-bold text-blue-800 mb-4">Project siswa</h1>
+          <h1 className="text-4xl font-bold text-blue-800 mb-4">
+            Project siswa
+          </h1>
         </BlurFade>
         <BlurFade delay={0.25 * 3} inView>
           <CardProject />
