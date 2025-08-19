@@ -18,21 +18,21 @@ export default function Home() {
       title: "SIoT",
       subtitle: "Sistem Internet of Things",
       desc: "Teknologi yang menghubungkan perangkat ke internet untuk bertukar data, otomatisasi, dan kontrol jarak jauh.",
-      img: "/img/siot.jpg",
+      img: "jurusan/siot.png",
     },
     {
       id: "pkk",
       title: "PKK",
       subtitle: "Praktek Kreatif dan Kewirausahaan",
       desc: "Membekali siswa dengan keterampilan berwirausaha melalui praktik nyata, inovasi produk, dan manajemen bisnis.",
-      img: "/img/pkk.jpg",
+      img: "jurusan/pkk.png",
     },
     {
       id: "cloud",
       title: "Cloud Computing",
       subtitle: "Teknologi Awan",
       desc: "Pembelajaran teknologi cloud computing terbaru untuk mendukung layanan berbasis internet yang efisien dan scalable.",
-      img: "/img/cloud.jpg",
+      img: "jurusan/cloud.png",
     },
     {
       id: "skj",
@@ -44,6 +44,23 @@ export default function Home() {
   ];
 
   const [activeCard, setActiveCard] = useState(cards[0]);
+  const mitraRef = useRef(null);
+  useEffect(() => {
+    const track = mitraRef.current;
+    if (!track) return;
+
+    let animationFrame;
+    const speed = 0.15;
+    const scroll = () => {
+      track.scrollLeft += speed;
+      if (track.scrollLeft >= track.scrollWidth / 2) {
+        track.scrollLeft -= track.scrollWidth / 2;
+      }
+      animationFrame = requestAnimationFrame(scroll);
+    };
+    animationFrame = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(animationFrame);
+  }, []);
 
 
   const slidesData = [
@@ -168,7 +185,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto max-w-6xl ">
+      <section className="container mx-auto max-w-6xl mt-8">
         <BlurFade delay={0.25 * 2} inView>
           <h1 className="text-4xl lg:text-4xl font-black text-blue-800 text-center uppercase mb-5">
             VISI
@@ -202,40 +219,44 @@ export default function Home() {
           </BlurFade>
         </div>
       </section>
-      <section className="bg-blue-700 text-white py-12 px-6 rounded-2xl max-w-6xl mx-auto">
+      <section className="bg-blue-700 text-white p-12 rounded-2xl max-w-6xl mx-auto mt-8">
+        <h1 className="text-2xl lg:text-4xl font-bold mb-12 text-center">
+          Sistem, Informatika, Jaringan, & Aplikasi (SIJA)
+        </h1>
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left Side: Text & Cards */}
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              Sistem, Informatika, Jaringan, & Aplikasi (SIJA)
-            </h1>
-            <p className="text-base md:text-lg mb-6 text-gray-100">
-              SIJA adalah perpaduan inovatif antara TKJ dan RPL yang mendukung
-              pembelajaran berbasis teknologi terbaru...
+            <p className="text-base md:text-md mb-8 text-gray-100 text-justify">
+              SIJA adalah perpaduan inovatif antara Teknik Komputer & Jaringan
+              (TKJ) dan Rekayasa Perangkat Lunak (RPL). Sekolah kami dilengkapi
+              dengan teknologi terbaru dalam bidang cloud computing untuk
+              mempersiapkan siswa menghadapi tantangan masa depan.
             </p>
 
             {/* Deskripsi Aktif */}
-            <div className="bg-white text-black p-5 rounded-xl shadow-lg mb-6">
+            <div className=" text-white rounded-xl mb-6">
               <h2 className="text-lg font-semibold">{activeCard.subtitle}</h2>
               <p className="text-sm mt-2 leading-relaxed">{activeCard.desc}</p>
             </div>
 
             {/* Auto Scroll Cards (Horizontal) */}
-            <div className="relative w-full overflow-hidden">
-              <div className="flex gap-4 animate-scroll-horizontal">
+            {/* Auto Scroll Cards (Horizontal) */}
+            <div className="slider">
+              <div className="slide-track">
                 {cards.concat(cards).map((card, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveCard(card)}
-                    className={`min-w-[200px] p-4 rounded-xl border text-left transition shadow-sm ${
-                      activeCard.id === card.id
-                        ? "bg-blue-600 text-white border-blue-400"
-                        : "bg-gray-100 text-black border-gray-300 hover:bg-gray-200"
-                    }`}
-                  >
-                    <h3 className="font-bold text-base">{card.title}</h3>
-                    <p className="text-sm">{card.subtitle}</p>
-                  </button>
+                  <div key={index} className="slide">
+                    <button
+                      onClick={() => setActiveCard(card)}
+                      className={`min-w-[300px] p-4 rounded-xl border text-left shadow-sm ${
+                        activeCard.id === card.id
+                          ? "bg-blue-600 text-white border-blue-400"
+                          : "bg-gray-100 text-black border-gray-300 hover:bg-gray-200"
+                      }`}
+                    >
+                      <h4 className="font-bold text-base">{card.title}</h4>
+                      <p className="text-sm">{card.subtitle}</p>
+                    </button>
+                  </div>
                 ))}
               </div>
             </div>
@@ -244,12 +265,10 @@ export default function Home() {
           {/* Right Side: Active Card Image & Detail */}
           <div className="flex flex-col items-center text-center">
             <img
-              src={activeCard.image}
+              src={activeCard.img}
               alt={activeCard.title}
-              className="w-full h-64 object-cover rounded-2xl shadow-lg mb-6"
+              className="w-full h-70 object-cover rounded-2xl"
             />
-            <h2 className="text-2xl font-bold mb-2">{activeCard.title}</h2>
-            
           </div>
         </div>
       </section>
