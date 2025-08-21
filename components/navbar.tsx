@@ -20,6 +20,7 @@ import { ThemeSwitch } from "@/components/theme-switch";
 import {
   SearchIcon,
   Logo,
+  LogoWhite,
   ChevronDown
 } from "@/components/icons";
 import { Button } from "@nextui-org/button";
@@ -71,17 +72,17 @@ export const Navbar = () => {
 
   return (
     <NextUINavbar
-      maxWidth="xl"
-      position="sticky"
+      maxWidth="2xl"
       className={clsx(
-        "backdrop-blur-md transition-colors duration-300",
-        isScrolled ? "bg-white shadow-md text-black" : "bg-white/10 text-white"
+        "transition-colors !backdrop-blur-none !bg-opacity-100 z-50 justify-around",
+        isScrolled ? "bg-white shadow-md text-black" : "bg-transparent text-white"
       )}
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
+            {isScrolled ? <Logo /> : <LogoWhite className="text-white" />}
+
             <p className={subtitle({ class: clsx("text-bold text-xl", isScrolled ? "text-black" : "text-white") })}>
               SMK TI BAZMA
             </p>

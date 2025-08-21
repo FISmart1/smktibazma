@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useState, useEffect } from "react";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -25,81 +26,25 @@ interface CarouselProps {
 
 }
 
-export function CarouselProgram({ slides }: CarouselProps) {
-    return (
-        <div className='w-full h-[768px]'>
-            <Swiper
-                loop={true}
-                spaceBetween={30}
-                effect={'fade'}
-                navigation={true}
-                pagination={{
-                    clickable: true,
-                }}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                modules={[Autoplay, EffectFade, Navigation, Pagination]}
-                className="mySwiper"
-            >
-                {slides.map((slide, index) => (
-                    <SwiperSlide key={index}>
-                        <div className='relative w-full h-full'>
-                            <div className='absolute inset-0'>
-                                <img
-                                    src={slide.img}
-                                    alt="coba"
-                                    className='w-full h-full object-cover object-center'
-                                />
-                            </div>
-
-                            <div className='absolute inset-y-0 left-0 w-full bg-gradient-to-tr from-blue-800 to-transparent'></div>
-
-                            <div className='relative z-10 w-full flex items-end h-full'>
-                                <div className='text-white w-full flex flex-col mx-auto my-auto px-4 max-w-7xl items-start mb-16'>
-                                    <div className='w-full md:w-1/2 '>
-                                        <BlurFade delay={0.25} inView>
-                                            <h1 className='text-3xl lg:text-6xl font-black leading-tight lg:leading-[64px] uppercase'>
-                                                {slide.heading}
-                                            </h1>
-                                        </BlurFade>
-                                    </div>
-                                    <div className='w-full md:w-1/2 mt-4 md:mt-0 md:ml-6'>
-                                        <BlurFade delay={0.25} inView>
-
-                                            <p className='text-xl'>
-                                                {slide.desc ?? 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}
-                                            </p>
-                                        </BlurFade>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </div >
-    )
-}
-
-// New Carousel component with props
 export default function Carousel({ slides }: CarouselProps) {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef<any>(null);
+
   return (
-    <div className="relative w-full h-[850px]">
+    <div className="relative w-full h-[970px]">
       {/* Swiper hanya untuk gambar */}
       <Swiper
         loop={true}
         spaceBetween={30}
         effect={"fade"}
-        pagination={{
-          clickable: true,
-        }}
+        pagination={false}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
         }}
-        modules={[Autoplay, EffectFade, Pagination]} // 🚫 Navigation dihapus
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        modules={[Autoplay, EffectFade]}
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
         className="mySwiper w-full h-full"
       >
         {slides.map((slide, index) => (
@@ -109,28 +54,42 @@ export default function Carousel({ slides }: CarouselProps) {
                 src={slide.img}
                 alt={`slide-${index}`}
                 className="w-full h-full object-cover object-center"
-                loading="eager"
               />
-              {/* Overlay gradient supaya teks tetap jelas */}
               <div className="absolute inset-0 bg-black/40"></div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Tulisan tetap di tengah, tidak ikut loop */}
-      <div className="absolute inset-0 flex items-center justify-center text-center z-10 px-4">
-        <div className="text-white">
-          <h3 className="text-md md:text-2xl font-semibold tracking-wide">
-            ISLAMIC BOARDING SCHOOL
-          </h3>
-          <h1 className="text-3xl md:text-7xl font-black mt-2">
-            SMK TI BAZMA
-          </h1>
-          <p className="text-md md:text-xl mt-4">
-            Energi Masa Depan Indonesia
-          </p>
+      {/* Konten teks */}
+      <div className="absolute inset-0 flex items-center z-10">
+        <div className="mx-auto w-full max-w-[1280px] px-6 md:px-8 lg:px-16">
+          <div className="text-white max-w space-y-4">
+            <h1 className="text-sm md:text-5xl font-bold tracking-wide uppercase">
+              {slides[activeIndex].heading}
+            </h1>
+            <p className="text-base md:text-lg leading-relaxed max-w-[800px]">
+              {slides[activeIndex].desc}
+            </p>
+          </div>
         </div>
+      </div>
+
+      {/* Navigation bawah (seperti di Pertamina) */}
+      <div className="absolute bottom-10 left-0 right-0 flex gap-8 z-20 mx-auto w-full max-w-[1170px]">
+        {slides.map((slide, index) => (
+          <button
+            key={index}
+            onClick={() => swiperRef.current?.slideToLoop(index)}
+            className={`text-sm md:text-light font-medium uppercase tracking-wide transition-all duration-300 ${
+              activeIndex === index
+                ? "text-white border-b-2 border-white"
+                : "text-gray-300 hover:text-white"
+            }`}
+          >
+            {slide.heading}
+          </button>
+        ))}
       </div>
     </div>
   );

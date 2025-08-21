@@ -66,33 +66,23 @@ export default function Home() {
   const slidesData = [
     {
       img: "carousel/main/guru.webp",
-      heading: "ISLAMIC BOARDING SCHOOL",
-      desc: "Selamat datang di SMK TI BAZMA, pusat pengembangan pendidikan ...",
+      heading: "Energi Masa Depan Indonesia!",
+      desc: "Selamat datang di SMK TI BAZMA – sekolah asrama unggulan berbasis IT dan keagamaan. Kami mendidik generasi siap digital yang berkarakter, beriman, dan berprestasi",
     },
     {
       img: "carousel/main/tasmi.webp",
-      heading: `JAGO IT, PINTER NGAJI`,
-      desc: "SMK TI BAZMA merupakan sekolah ...",
-    },
-    {
-      img: "carousel/main/silat.webp",
-      heading: "Ekstrakurikuler Pencak Silat",
-      desc: "Pencak Silat adalah seni bela diri ...",
+      heading: `Smart in Tech, Strong in Faith`,
+      desc: "Paduan istimewa antara kompetensi Teknologi Informasi (SIJA) dan ilmu agama: Fiqih, Tajwid, Akhlak, serta hafalan Al-Qur’an juz 26–30 secara mutqin.",
     },
     {
       img: "carousel/main/robotik.webp",
-      heading: "Ekstrakurikuler Robotik",
-      desc: "Ekstrakurikuler Robotik merupakan salah satu eskul ...",
+      heading: "Sistem, Informatika, Jaringan & Aplikasi",
+      desc: "Fokus utama pada cloud computing, Internet of Things, keamanan jaringan, hingga wirausaha kreatif—siap membentuk profesional IT masa depan.",
     },
     {
-      img: "carousel/main/pramuka.webp",
-      heading: "Ekstrakurikuler Pramuka",
-      desc: "Ekstrakulikuler Pramuka merupakan eskul wajib ...",
-    },
-    {
-      img: "carousel/main/perpustakaan.webp",
-      heading: "Ekstrakurikuler Futsal",
-      desc: "Futsal sebagai Ekstrakulikuler olahraga ...",
+      img: "carousel/main/beasiswa.webp",
+      heading: "Beasiswa Penuh 100%",
+      desc: "Belajar tanpa biaya untuk siswa dhuafa dari seluruh Indonesia—didukung penuh oleh wakaf dan dana sosial kemanusiaan melalui Yayasan BAZMA.",
     },
   ];
 

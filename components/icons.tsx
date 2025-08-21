@@ -25,10 +25,21 @@ import { IconSvgProps } from "@/types";
 // );
 import Image from 'next/image';
 import logoSrc from '../public/logo.avif'; // Sesuaikan jalur
+import bazmaPutih from '../public/bazmaputih.png'; // Sesuaikan jalur
 
 export const Logo: React.FC<{ size?: number }> = ({ size = 36 }) => (
   <Image
     src={logoSrc}
+    alt="Logo"
+    width={size}
+    height={size}
+    style={{ objectFit: 'contain' }} // Opsional, untuk mengatur cara gambar ditampilkan
+  />
+);
+
+export const LogoWhite: React.FC<{ size?: number }> = ({ size = 36 }) => (
+  <Image
+    src={bazmaPutih}
     alt="Logo"
     width={size}
     height={size}
