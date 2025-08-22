@@ -1,5 +1,7 @@
 "use client";
 import CardProject, { CardTest, Contact, Ppdb } from "@/components/card";
+import Ai from "@/components/ai";
+import Kontak from "@/components/kontak";
 import Footer from "@/components/footer";
 import { Button } from "@nextui-org/button";
 import { Card, CardFooter, Divider, Image } from "@nextui-org/react";
@@ -11,6 +13,12 @@ import ImageWithSkeleton from "@/components/image-skeleton";
 import { Link } from "@nextui-org/link";
 import { useState, useEffect, useRef } from "react";
 import { DaftarMitra } from "./ppdb/partner";
+import {
+  IconMailFilled,
+  IconPhoneFilled,
+  IconBrandWhatsappFilled,
+  IconBrandInstagramFilled
+} from "@tabler/icons-react";
 
 export default function Home() {
   const cards = [
@@ -269,7 +277,7 @@ export default function Home() {
         </BlurFade>
       </section>
 
-      <div className="container mx-auto rounded-lg max-w-6xl mb-[75px] mt-8 p-10 bg-white shadow-[0_0_20px_rgba(0,0,0,0.15)]">
+      <div className="container mx-auto rounded-lg max-w-6xl mb-[30px] mt-8 p-10 bg-white shadow-[0_0_20px_rgba(0,0,0,0.15)]">
         <BlurFade delay={0.25 * 3} inView>
           <h1 className="text-4xl font-bold text-blue mb-8 ">
             Mengapa Sekolah di SMK TI BAZMA?
@@ -281,89 +289,8 @@ export default function Home() {
           </div>
         </BlurFade>
       </div>
-      <div className="container mx-auto rounded-lg max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        {/* Kiri */}
-        <div className="flex flex-col gap-6 ">
-          {/* Map + Alamat */}
-          <div className="rounded-xl overflow-hidden shadow-md border">
-            <img
-              src="/map.png"
-              alt="map"
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4 text-sm text-gray-600">
-              JL Raya Cikampek Cicadas, RT.1/RW.1, Cicadas, Kec. Ciampea,
-              Kabupaten Bogor, Jawa Barat 16620
-            </div>
-          </div>
-
-          {/* Kontak */}
-          <div className="grid grid-cols-2 gap-6">
-            <div className="flex flex-col items-center justify-center rounded-xl shadow-md border p-4 text-center">
-              <div className="text-2xl text-blue-500">📧</div>
-              <div className="font-semibold">Email</div>
-              <div className="text-sm">smktibazma@gmail.com</div>
-            </div>
-
-            <div className="flex flex-col items-center justify-center rounded-xl shadow-md border p-4 text-center">
-              <div className="text-2xl text-blue-500">📞</div>
-              <div className="font-semibold">Call</div>
-              <div className="text-sm">+62 821 2183 1439</div>
-            </div>
-
-            <div className="flex flex-col items-center justify-center rounded-xl shadow-md border p-4 text-center">
-              <div className="text-2xl text-green-500">💬</div>
-              <div className="font-semibold">WhatsApp</div>
-              <div className="text-sm">0821 2183 1439</div>
-            </div>
-
-            <div className="flex flex-col items-center justify-center rounded-xl shadow-md border p-4 text-center">
-              <div className="text-2xl text-pink-500">📷</div>
-              <div className="font-semibold">Instagram</div>
-              <div className="text-sm">@smktibazma</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Kanan */}
-        <div className="rounded-xl shadow-md border p-6 flex flex-col gap-4">
-          <div className="text-blue-600 font-semibold">Tanya Ke Bazma AI</div>
-
-          <div className="flex flex-col gap-2">
-            {/* Pesan user */}
-            <div className="flex justify-end">
-              <div className="bg-blue-100 text-blue-700 px-4 py-2 rounded-lg max-w-xs">
-                Jurusan di smktibazma?
-              </div>
-            </div>
-
-            {/* Balasan AI */}
-            <div className="flex items-start gap-2">
-              <div className="bg-blue-600 text-white px-2 py-1 rounded-md text-xs font-bold">
-                BZM
-              </div>
-              <div className="bg-blue-600 text-white px-4 py-2 rounded-lg max-w-xs">
-                SIJA adalah perpaduan inovatif antara Teknik Komputer & Jaringan
-                (TKJ) dan Rekayasa Perangkat Lunak (RPL). Sekolah kami
-                dilengkapi dengan teknologi terbaru dalam bidang cloud computing
-                untuk mempersiapkan siswa menghadapi tantangan masa depan.
-              </div>
-            </div>
-          </div>
-
-          {/* Input */}
-          <div className="flex gap-2 mt-4">
-            <input
-              type="text"
-              placeholder="Jurusan di smktibazma?"
-              className="flex-1 border rounded-lg px-3 py-2 text-sm"
-            />
-            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">
-              Kirim
-            </button>
-          </div>
-        </div>
-      </div>
+      <BlurFade delay={0.25 * 3} inView> <Kontak /> </BlurFade>
+      
 
       <div className="container mx-auto px-4 max-w-6xl mb-[75px]">
         <BlurFade delay={0.25 * 2} inView>

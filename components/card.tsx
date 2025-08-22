@@ -262,7 +262,7 @@ export function Ppdb() {
     {
       icons: <IconBooks />,
       title: "Kurikulum Terpadu",
-      desc: "Memadukan Kurikulum Nasional, Kurikulum Industri dan Kurikulum berbasis Islamic Boarding School  (Asrama).",
+      desc: "Memadukan Kurikulum Nasional, Kurikulum Industri, dan Kurikulum berbasis Islamic Boarding School (Asrama) dalam satu kesatuan pembelajaran yang komprehensif dan berdaya saing.",
     },
     {
       icons: <IconBuildings />,
@@ -284,7 +284,7 @@ export function Ppdb() {
       title: "Pesantren Berbasis IT",
       desc: "SMK TI BAZMA membekali siswa dengan program unggulan berbasis IT dan hafalan Al-Qur'an minimal 3 Juz (28, 29, 30). Serta ilmu agama seperti Fiqih, Akhlak, dan Tafsir untuk mencetak pemimpin berkarakter unggul.",
     },
-  ]
+  ];
 
   return (
     <div className="grid gap-6 md:grid-cols-3 justify-center items-stretch p-4">
