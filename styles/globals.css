@@ -24,6 +24,18 @@
   background-color: #005BD3;
 }
 
+.bg-green {
+  background-color: #AAC237;
+}
+
+.bg-red {
+  background-color: #C61B1F;
+}
+
+.text-blue {
+  color: #005BD3;
+}
+
 .slider {
   overflow: hidden;
   width: 100%;

@@ -53,7 +53,7 @@ const ReviewCard = ({
     return (
         <figure
             className={cn(
-                "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+                "relative w-64 cursor-pointer overflow-hidden rounded-xl p-4",
                 // light styles
                 // "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
                 // dark styles
@@ -69,14 +69,9 @@ const ReviewCard = ({
 
 export function DaftarMitra() {
     return (
-        <div className="relative flex h-[300px] w-full flex-col items-center justify-center overflow-hidden">
-            <Marquee pauseOnHover className="[--duration:20s]">
+        <div className="relative flex h-[150px] w-full flex-col items-center justify-center overflow-hidden">
+            <Marquee pauseOnHover className="[--duration:10s]">
                 {firstRow.map((review) => (
-                    <ReviewCard key={review.link} {...review} />
-                ))}
-            </Marquee>
-            <Marquee reverse pauseOnHover className="[--duration:20s]">
-                {secondRow.map((review) => (
                     <ReviewCard key={review.link} {...review} />
                 ))}
             </Marquee>

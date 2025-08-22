@@ -31,7 +31,7 @@ export default function Carousel({ slides }: CarouselProps) {
   const swiperRef = useRef<any>(null);
 
   return (
-    <div className="relative w-full h-[970px]">
+    <div className="relative w-full h-screen">
       {/* Swiper hanya untuk gambar */}
       <Swiper
         loop={true}
@@ -62,34 +62,37 @@ export default function Carousel({ slides }: CarouselProps) {
       </Swiper>
 
       {/* Konten teks */}
+      {/* Konten teks */}
       <div className="absolute inset-0 flex items-center z-10">
-        <div className="mx-auto w-full max-w-[1280px] px-6 md:px-8 lg:px-16">
-          <div className="text-white max-w space-y-4">
-            <h1 className="text-sm md:text-5xl font-bold tracking-wide uppercase">
+        <div className="mx-auto w-full max-w-[1280px] px-4 sm:px-6 md:px-8 lg:px-16">
+          <div className="text-white max-w space-y-3 text-center md:text-left">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide uppercase">
               {slides[activeIndex].heading}
             </h1>
-            <p className="text-base md:text-lg leading-relaxed max-w-[800px]">
+            <p className="text-sm sm:text-base md:text-sm leading-relaxed max-w-[800px] mx-auto md:mx-0">
               {slides[activeIndex].desc}
             </p>
           </div>
         </div>
       </div>
 
-      {/* Navigation bawah (seperti di Pertamina) */}
-      <div className="absolute bottom-10 left-0 right-0 flex gap-8 z-20 mx-auto w-full max-w-[1170px]">
-        {slides.map((slide, index) => (
-          <button
-            key={index}
-            onClick={() => swiperRef.current?.slideToLoop(index)}
-            className={`text-sm md:text-light font-medium uppercase tracking-wide transition-all duration-300 ${
-              activeIndex === index
-                ? "text-white border-b-2 border-white"
-                : "text-gray-300 hover:text-white"
-            }`}
-          >
-            {slide.heading}
-          </button>
-        ))}
+      {/* Navigation bawah */}
+      <div className="absolute bottom-6 left-0 right-0 z-20 mx-auto w-full max-w-[1170px] px-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:flex gap-4 sm:gap-6 md:gap-8 justify-center md:justify-start">
+          {slides.map((slide, index) => (
+            <button
+              key={index}
+              onClick={() => swiperRef.current?.slideToLoop(index)}
+              className={`text-xs sm:text-sm md:text-sm font-medium uppercase tracking-wide transition-all duration-300 ${
+                activeIndex === index
+                  ? "text-white border-b-2 border-white"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
+              {slide.heading}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

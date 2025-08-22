@@ -235,7 +235,7 @@ interface CardPpdbProps {
 
 const CardPpdb: FC<CardPpdbProps> = ({ icons, title, desc }) => {
   return (
-    <Card className="max-w-[400px] p-3 bg-blue-800 text-white">
+    <Card className="max-w-[400px] p-3 bg-blue text-white">
       <CardHeader className="flex gap-3">
         <div>{icons}</div>
         <div className="flex flex-col">
