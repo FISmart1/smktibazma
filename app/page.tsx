@@ -303,11 +303,13 @@ export default function Home() {
         </BlurFade>
       </div>
       <Footer />
-      <div className="w-full text-center flex justify-between mt-[-20px]">
-        <div className="bg-blue w-[500px] h-[30px]"></div>
-        <div className="bg-green w-[500px] h-[30px]"></div>
-        <div className="bg-red w-[500px] h-[30px]"></div>
-      </div>
+      <div className="w-full grid grid-cols-3 mt-[-20px]">
+  <div className="biru h-[20px]"></div>
+  <div className="hijau h-[20px]"></div>
+  <div className="merah h-[20px]"></div>
+</div>
+
+
     </section>
   );
 }
